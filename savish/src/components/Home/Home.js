@@ -1,6 +1,6 @@
 import React from 'react'
-import Info from './About.js';
-import Artwork from './Links.js';
+import Info from '../About';
+import Artwork from '../Links.js';
 function Home() {
     return (
         <div className='container-fluid background'>
@@ -10,7 +10,6 @@ function Home() {
                 <h2 className="text-center underheading">gec art and literature club</h2>
             </div>
             <div className=" container-fluid">
-
                 <div className="container first-half">
                     <div className='pre-first-half' />
                     <Info/>

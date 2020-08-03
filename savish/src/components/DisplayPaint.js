@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import CardGroup from 'react-bootstrap/CardGroup'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/button';
+import Button from 'react-bootstrap/Button';
 //import CardGroup from 'react-bootstrap/CardGroup'
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom'
 import View from './View'
