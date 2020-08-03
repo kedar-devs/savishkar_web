@@ -35,7 +35,7 @@ header::after{
     margin: auto;
 }
 
-h1{
+h2{
     text-align: center;
     padding-top:150px;
     font-size: 65px;
@@ -96,11 +96,10 @@ i:hover{
     text-transform: capitalize;
 }
 
-h2{
+h3{
     text-align: center;
-    font-family: fantasy;
     font-size:52px;
-    word-spacing: 20px;
+    word-spacing: 16px;
     text-transform: capitalize;
     text-overflow:clip;
     
@@ -110,7 +109,7 @@ h2{
     background-image:url("background.jpg") ;
     background-repeat: no-repeat;
     background-size: cover;
-    height: initial;
+    height: auto;
     min-height: 800px;
     -webkit-background-size: 100%;
     -moz-background-size: cover;
@@ -226,4 +225,14 @@ h2{
     border-radius: 25px;
     width: 250px;
 
+}
+
+
+@media(max-width:1000px){
+    h2{
+        font-size:45px;
+    }
+    h3{
+        font-size:20px;
+    }
 }

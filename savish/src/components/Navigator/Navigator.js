@@ -16,7 +16,7 @@ function Navigator() {
                   <NavDropdown.Item href="#action/3.1">Poems</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">Paintings</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Stories</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Video</NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.4">Video</NavDropdown.Item>
                   <NavDropdown.Divider />
                 </NavDropdown>
               </Nav>

@@ -5,9 +5,9 @@ function Home() {
     return (
         <div className='container-fluid background'>
             <div className="background page-headers">
-                <h1 className='text-center text-nowrap'>savishkar</h1>
+                <h2 className='text-center text-nowrap'>savishkar</h2>
                 <br />
-                <h2 className="text-center underheading">gec art and literature club</h2>
+                <h3 className="text-center underheading">gec art and literature club</h3>
             </div>
             <div className=" container-fluid">
                 <div className="container first-half">
