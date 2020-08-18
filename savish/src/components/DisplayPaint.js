@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 //import CardGroup from 'react-bootstrap/CardGroup'
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom'
-import View from './View'
+
 import Stv from './Stv.js';
 /*function onClicBut()
 {

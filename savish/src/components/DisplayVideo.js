@@ -4,9 +4,9 @@ import CardGroup from 'react-bootstrap/CardGroup'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 //import CardGroup from 'react-bootstrap/CardGroup'
-import { Link, BrowserRouter as Router, Route } from 'react-router-dom'
+
 import Reactplayer from 'react-player'
-import View from './View'
+
 
 /*onClicBut()
 {
@@ -24,7 +24,7 @@ const Video = props => {
                     style={{width:"19rem"}}
                 />
                 <Card.Title>{props.video.title}</Card.Title>
-                <Button variant="primary"><Link to={'"/view/' + props.video._id}>View</Link></Button>
+                
             </Card.Body>
         </Card>
     )

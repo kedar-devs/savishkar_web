@@ -1,11 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/important.css';
+import './css/about.module.css';
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 import Navigator from './components/Navigator/Navigator';
 import Contact from './components/Contact';
 import LoginAdmin from './components/LoginAdmin.js';
-import User from './components/User.js';
+
 import Things from './components/Things';
 import DisplayPoem from './components/DisplayPoem.js';
 import DisplayVideo from './components/DisplayVideo.js';
@@ -16,6 +17,9 @@ import AddPoem from './components/AddPoem';
 import AddStory from './components/AddStory';
 import AddVideo from './components/AddVideo';
 import AddPaint from './components/AddPaint';
+import AddUser from './components/AddUser';
+import LoginUser from './components/LoginUser';
+import Func from './components/Func';
 
 //import store from '/store';
 function App() {
@@ -27,7 +31,9 @@ function App() {
             <Navigator />
             <Route path="/" exact component={Home}/>
             <Route path='/home' exact component={Home} />
-            <Route path='/signin' exact component={User} />
+            <Route path='/signin' exact component={AddUser} />
+            <Route path='/loginuser' exact component={LoginUser}/>
+            <Route path='/function' exact component={Func}/> 
             <Route path='/admin' exact component={LoginAdmin} />
             <Route path="/things" exact component={Things} />
             <Route path="/poemdisp" exact component={DisplayPoem} />

@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import logo from '../photos/sa14.JPG';
 import axios from 'axios';
-import {router} from "react-router-dom";
-//import {Redirect} from 'react-router-dom';
-//import Things from './Things';
-import {BrowserRouter as Router,Route} from 'react-router-dom';
+
 
 
 

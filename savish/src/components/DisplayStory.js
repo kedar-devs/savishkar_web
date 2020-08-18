@@ -3,7 +3,7 @@ import axios from 'axios';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import FileViewer from 'react-file-viewer';
+
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 import Stv from './Stv.js';
 import photu from '../photos/set1.jpg';

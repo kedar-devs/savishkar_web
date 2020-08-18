@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import princy from '../photos/pricy.jpg';
 import habbu from '../photos/habbu.jfif';
 import orgy from '../photos/IMG_7245.JPG';
+
 class About extends Component {
     constructor() {
         super()
@@ -9,7 +10,7 @@ class About extends Component {
         this.onClickLeft = this.onClickLeft.bind(this)
         this.onClickRight = this.onClickRight.bind(this)
 
-        const img0 = require('../photos/sa1.JPG');
+        
         const img1 = require('../photos/sa2.JPG');
         const img2 = require('../photos/sa4.JPG');
         const img3 = require('../photos/sa5.JPG');
@@ -18,12 +19,14 @@ class About extends Component {
         const img6 = require('../photos/sa8.JPG');
         const img7 = require('../photos/sa3.JPG');
         const img8 = require('../photos/saboii.JPG');
+        
         this.state = {
             index: 0,
-            imgList: [img0, img1, img2, img3, img4, img5, img6, img7, img8],
+            imgList: [orgy,img1, img2, img3, img4, img5, img6, img7, img8],
             name: ['Savishkar', 'Rohit Narulkar', 'Suniti Gaonkar', 'Aishwarya Parab', 'Shivam Raikar', 'Aarushi Raghav', 'Vritika Naik', 'Erisha Ferrao', 'Deepraj Bhosle'],
             designation: ['Council', 'President', 'Chairperson', 'Literature section', 'Art Section', 'PR & Managment', 'Technical Adviser', 'Secretary', 'Assistance Technical Advisar']
         }
+        
     }
     onClickLeft() {
         if (this.state.index - 1 === -1) {
@@ -51,6 +54,7 @@ class About extends Component {
         }
     }
     render() {
+        
         return (
             <div>
                 <div>
@@ -80,20 +84,24 @@ class About extends Component {
                         </div>
                     </div>
                     <br /><br />
-                    <div className='text-center'>
-                        <img src={orgy} className="rounded img-fluid" alt="sorry couldnt load" />
-                    </div>
+                    
 
                     <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae suscipit orci. Nullam gravida sollicitudin libero. Aliquam in enim facilisis, consectetur mi quis, semper risus. Fusce bibendum neque a ipsum consequat, et ultrices lorem vestibulum. Quisque molestie ex massa, sed laoreet elit fringilla et. Quisque viverra convallis blandit. Phasellus lobortis, sem id convallis varius, erat magna consequat nulla, non suscipit massa est at turpis. Maecenas justo ante, volutpat vitae quam vel, ultrices commodo elit. Pellentesque consectetur libero ac massa eleifend, vel vehicula arcu mattis. In a quam nibh. Cras iaculis vestibulum ex, vitae tincidunt augue aliquet a.</p>
-                    <div className='text-nowrap text-center'>
-                        <div className='row'>
-                            <div className="col">
-                                <button className='butts' onClick={this.onClickLeft}><i className="left-arrow"></i></button>
+                    <div className='text-nowrap text-center carousel slide'>
+                        <div className='carousal-inner'  id="myCarousel"  data-ride="carousel">
+                            <div className="item active">
+                                <button className='left carousel-control ' onClick={this.onClickLeft}><i className="left-arrow"></i></button>
 
-                                <img src={this.state.imgList[this.state.index]} alt='sorry couldnt load' className="council-img img-fluid" />
-                                <button className="butts" onClick={this.onClickRight}><i className="right-arrow"></i></button>
-                            </div>
+                                <img src={this.state.imgList[this.state.index]} alt='sorry couldnt load' className=" img-fluid" />
+                                <button className="right carousel-control
+                                " onClick={this.onClickRight}><i className="right-arrow"></i></button>
                         </div>
+                        </div>
+                        <div className="row container">
+                            <div className="col">
+                
+                </div>
+            </div>
                         <br />
                         <div className='d-flex justify-content-center'>
                             <p className="name">name:{this.state.name[this.state.index]}</p>

@@ -51,7 +51,34 @@ router.post('/add',upload.single('content'),(req,res)=>{
     .catch(err=> res.status(400).json('Error:'+err))
 
 })
+router.post('/adduser',(req,res)=>{
+    
+    const title=req.body.title
+    const content=req.body.content
+    const poet=req.body.poet
+    const about=req.body.about
+    const date=Date(req.body.date)
 
+    const newUser=new Poems({title,content,poet,date,about})
+
+    newUser.save()
+    .then(result => {
+        res.status(201).json({
+            message: "User registered successfully!",
+            userCreated: {
+                title:result.title,
+                content:result.content
+            }
+        })
+    })
+    .catch(err => {
+        console.log(err),
+            res.status(500).json({
+                error: err
+            });
+    })
+
+})
 router.route('/:id').get((req,res)=>{
     Poems.findById(req.params.id)
     .then(poem=>res.json(poem))

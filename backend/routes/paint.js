@@ -28,7 +28,7 @@ var upload = multer({
 });
 
 router.post('/add',upload.single('content'),(req,res)=>{
-    
+    console.log(req.body)
     const url=req.protocol+'://'+req.get('host')
     const title=req.body.title
     const content=url+'/uploads/painting/'+req.file.filename
@@ -65,7 +65,34 @@ router.route('/:id').get((req,res)=>{
     .then(paint=>res.json(paint))
     .catch(err=>res.status(400).json('Error:'+err))
 })
+router.post('/adduser',(req,res)=>{
+    console.log(req.body)
+    
+    const title=req.body.title
+    const content=req.body.content
+    const painter=req.body.painter
+    const date=Date(req.body.date)
 
+    const newUser=new Paints({title,content,painter,date})
+
+    newUser.save()
+    .then(result => {
+        res.status(201).json({
+            message: "User registered successfully!",
+            userCreated: {
+                title:result.title,
+                content:result.content
+            }
+        })
+    })
+    .catch(err => {
+        console.log(err),
+            res.status(500).json({
+                error: err
+            });
+    })
+
+})
 router.route('/:id').delete((req,res)=>{
     Paints.findByIdAndDelete(req.params.id)
     .then(()=>res.json('PAINTING DELETED'))
