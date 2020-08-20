@@ -16,8 +16,8 @@ import AddPoem from './components/AddPoem';
 import AddStory from './components/AddStory';
 import AddVideo from './components/AddVideo';
 import AddPaint from './components/AddPaint';
-import Carosel from './components/Carosel/Carosel';
-import Links from "./components/Links.js"
+import Carosel from './components/Carosel/Carosel'
+import Carousel from './components/carousel';
 // import './App.css'
 // import About from './components/About.js'
 //import store from '/store';
@@ -27,16 +27,8 @@ function App() {
      
     // <div className='background'>
       <Router>
+        <Carousel/>
         {/* <Carosel /> */}
-        {/* <Links /> */}
-        
-    <div className="container sec-half" >
-        <div className="pre-sec-half" />
-        <h2 className='text-center'>Artwork</h2>
-        <br /><br />
-        <Links />
-        <div className="pre-sec-half" />
-        </div>
             {/* <Navigator />
             <Route path="/" exact component={Home}/> */}
             {/* <Route path='/home' exact component={Home} />

@@ -58,7 +58,25 @@ body{
 	background-color: yellow;
 	color:#ffffff;
 }
-.item{
-	
-}
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	width: 95%;
+	margin:10px;
+  }
+  
+  .card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  .container {
+	padding: 2px 16px;
+  }
+  .spacing{
+	margin:100px 350px;
+  }
 
+@media(max-width:1500px){
+	.spacing{
+		margin:100px;
+	}
+}
