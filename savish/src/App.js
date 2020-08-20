@@ -16,17 +16,20 @@ import AddPoem from './components/AddPoem';
 import AddStory from './components/AddStory';
 import AddVideo from './components/AddVideo';
 import AddPaint from './components/AddPaint';
-
+import Carosel from './components/Carosel./Carosel'
+// import './App.css'
+// import About from './components/About.js'
 //import store from '/store';
 function App() {
   
   return (
      
-    <div className='background'>
+    // <div className='background'>
       <Router>
-            <Navigator />
-            <Route path="/" exact component={Home}/>
-            <Route path='/home' exact component={Home} />
+        <Carosel />
+            {/* <Navigator />
+            <Route path="/" exact component={Home}/> */}
+            {/* <Route path='/home' exact component={Home} />
             <Route path='/signin' exact component={User} />
             <Route path='/admin' exact component={LoginAdmin} />
             <Route path="/things" exact component={Things} />
@@ -36,10 +39,16 @@ function App() {
             <Route path="/STORYdisp" exact component={DisplayStory} />
             <Route path="/addpoem" extends component={AddPoem} />
             <Route path="/addStory" extends component={AddStory} />
-            <Route path="/addPaint" extends component={AddPaint} />
-            <Route path="/addVideo" extends component={AddVideo} />
-      
-      <div className="container-fluid third-half">
+            <Route path="/addPaint" extends component={AddPaint} /> 
+            <Route path="/addVideo" extends component={AddVideo} />*/}
+      </Router>
+  //  </div>
+  );
+}
+
+export default App;
+
+      {/* <div className="container-fluid third-half">
             <div className="container">
               <div className="pre-third-half" />
               <div className="third-half">
@@ -49,10 +58,4 @@ function App() {
                 </div>
                 <div className="pre-third-half" />
             </div>
-      </div>
-      </Router>
-    </div>
-  );
-}
-
-export default App;
+      </div> */}
