@@ -139,115 +139,191 @@
 //}
 
 //export default Carosel
-import React,{useEffect,useState} from 'react'
-import styles from "./Carosel.module.css"
-import "../../App.css"
-function Carosel() {
-	const [allSlide, setallSlide] = useState(0);
-	const [jumpSlideWidth, setJumpSlideWidth] = useState(0)
-	useEffect(() => {
-		 let controls=document.querySelector(".Carosel_controls__1r3-c");
-		 let container=document.querySelector(".Carosel_thumbnailcontainer__H94le");
-		        const allBox=container.children;
-		        let containerWidth=container.offsetWidth;
-		        const margin=30;
-		         var items=0;
-				 var totalItems=0;
-		        let responsive=[
-		            {breakPoint:{width:0,item:1}}, //if width greater than 0 (1 item will show) 
-		            {breakPoint:{width:600,item:4}}, //if width greater than 600 (2  item will show) 
-		            {breakPoint:{width:1000,item:5}} //if width greater than 1000 (4 item will show) 
-		           ]
-		           for(let i=0; i<responsive.length;i++){
-		            if(window.innerWidth>responsive[i].breakPoint.width){
-		                items=responsive[i].breakPoint.item
-		            }
-				}
-				    var totalItemsWidth=0
-   for(let i=0;i<allBox.length;i++){
-       allBox[i].style.width=(containerWidth/items)-margin + "px";
-       allBox[i].style.margin=(margin/2)+ "px";
-      totalItemsWidth+=containerWidth/items;
-      totalItems++;}
-   container.style.width=totalItemsWidth + "px";
-	setallSlide(Math.ceil(totalItems/items))	   
-	},[])
+// import React,{useEffect,useState} from 'react'
+// import styles from "./Carosel.module.css"
+// import "../../App.css"
+// function Carosel() {
+// 	const [allSlide, setallSlide] = useState(0);
+// 	const [jumpSlideWidth, setJumpSlideWidth] = useState(0)
+// 	useEffect(() => {
+// 		 let controls=document.querySelector(".Carosel_controls__1r3-c");
+// 		 let container=document.querySelector(".Carosel_thumbnailcontainer__H94le");
+// 		        const allBox=container.children;
+// 		        let containerWidth=container.offsetWidth;
+// 		        const margin=30;
+// 		         var items=0;
+// 				 var totalItems=0;
+// 		        let responsive=[
+// 		            {breakPoint:{width:0,item:1}}, //if width greater than 0 (1 item will show) 
+// 		            {breakPoint:{width:600,item:4}}, //if width greater than 600 (2  item will show) 
+// 		            {breakPoint:{width:1000,item:5}} //if width greater than 1000 (4 item will show) 
+// 		           ]
+// 		           for(let i=0; i<responsive.length;i++){
+// 		            if(window.innerWidth>responsive[i].breakPoint.width){
+// 		                items=responsive[i].breakPoint.item
+// 		            }
+// 				}
+// 				    var totalItemsWidth=0
+//    for(let i=0;i<allBox.length;i++){
+//        allBox[i].style.width=(containerWidth/items)-margin + "px";
+//        allBox[i].style.margin=(margin/2)+ "px";
+//       totalItemsWidth+=containerWidth/items;
+//       totalItems++;}
+//    container.style.width=totalItemsWidth + "px";
+// 	setallSlide(Math.ceil(totalItems/items))	   
+// 	},[])
 
-const controlSlides=(ele)=>{
-	// alert("called")	
-     // select controls children  'ul' element 
-     const li=document.querySelector(".Carosel_controls__1r3-c").children;
-	//  console.log(ul)
-     // select ul children 'li' elements;
-    // const li=ul[0].children
-    // console.log(li)
-     var active=0;
+// const controlSlides=(ele)=>{
+// 	// alert("called")	
+//      // select controls children  'ul' element 
+//      const li=document.querySelector(".Carosel_controls__1r3-c").children;
+// 	//  console.log(ul)
+//      // select ul children 'li' elements;
+//     // const li=ul[0].children
+//     // console.log(li)
+//      var active=0;
 
-     for(let i=0;i<li.length;i++){
-         if(li[i].className=="active"){
-             // find who is now active
-             active=i;
-             // remove active class from all 'li' elements
-             li[i].className="";
-         }
-	 }
-	//  console.log(ele)
-     // add active class to current slide
-     ele.target.className="active";
-// console.log(ele.target.id)
-	 var numb=((ele.target.id-1)-active)/2;
-	 let containerWidth=document.querySelector(".Carosel_thumbnailcontainer__H94le").offsetWidth
-	//  console.log(containerWidth)
-	 console.log(numb)
-		setJumpSlideWidth(jumpSlideWidth+(containerWidth*numb));
-		console.log(jumpSlideWidth)
-		document.querySelector(".Carosel_thumbnailcontainer__H94le").style.marginLeft=-jumpSlideWidth + "px";
-	 	console.log(document.querySelector(".Carosel_thumbnailcontainer__H94le").style.marginLeft)
-	}
-    return (
-        <div className={styles.thumbnailslider}>
-		<div className={styles.thumbnailcontainer}>
-		<div className={styles.item}>
-			1
-		</div>
-		<div className={styles.item}>	
-			2
-		</div>
-		<div className={styles.item}>
-			3
-		</div>
-		<div className={styles.item}>
-			4
-		</div>
-		<div className={styles.item}>
-			5
-		</div>
-		<div className={styles.item}>
-			6
-		</div>
-		<div className={styles.item}>
-			7
-		</div>
-		<div className={styles.item}>
-			8
-		</div>
-		<div className={styles.item}>
-			9
-		</div>
-		<div className={styles.item}>
-			10
-		</div>
-	</div>
+//      for(let i=0;i<li.length;i++){
+//          if(li[i].className=="active"){
+//              // find who is now active
+//              active=i;
+//              // remove active class from all 'li' elements
+//              li[i].className="";
+//          }
+// 	 }
+// 	//  console.log(ele)
+//      // add active class to current slide
+//      ele.target.className="active";
+// // console.log(ele.target.id)
+// 	 var numb=((ele.target.id-1)-active)/2;
+// 	 let containerWidth=document.querySelector(".Carosel_thumbnailcontainer__H94le").offsetWidth
+// 	//  console.log(containerWidth)
+// 	 console.log(numb)
+// 		setJumpSlideWidth(jumpSlideWidth+(containerWidth*numb));
+// 		console.log(jumpSlideWidth)
+// 		document.querySelector(".Carosel_thumbnailcontainer__H94le").style.marginLeft=-jumpSlideWidth + "px";
+// 	 	console.log(document.querySelector(".Carosel_thumbnailcontainer__H94le").style.marginLeft)
+// 	}
+//     return (
+//         <div className={styles.thumbnailslider}>
+// 		<div className={styles.thumbnailcontainer}>
+// 		<div className={styles.item}>
+// 			1
+// 		</div>
+// 		<div className={styles.item}>	
+// 			2
+// 		</div>
+// 		<div className={styles.item}>
+// 			3
+// 		</div>
+// 		<div className={styles.item}>
+// 			4
+// 		</div>
+// 		<div className={styles.item}>
+// 			5
+// 		</div>
+// 		<div className={styles.item}>
+// 			6
+// 		</div>
+// 		<div className={styles.item}>
+// 			7
+// 		</div>
+// 		<div className={styles.item}>
+// 			8
+// 		</div>
+// 		<div className={styles.item}>
+// 			9
+// 		</div>
+// 		<div className={styles.item}>
+// 			10
+// 		</div>
+// 	</div>
   
-  <ul className={styles.controls} >
-	  {
-		Array.from(Array(allSlide), (_, i) => i + 1).map((e)=>{
-			return(
-			<li onClick={controlSlides} key={e} id={e}></li>)}
-		)  
-	  }
-  </ul>
-</div>
-    )
+//   <ul className={styles.controls} >
+// 	  {
+// 		Array.from(Array(allSlide), (_, i) => i + 1).map((e)=>{
+// 			return(
+// 			<li onClick={controlSlides} key={e} id={e}></li>)}
+// 		)  
+// 	  }
+//   </ul>
+// </div>
+//     )
+// }
+// export default Carosel
+import React,{useEffect,useState} from 'react'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import styles from './Carosel.module.css'
+function Carosel() {
+	const [state, setState] = useState({})
+	useEffect(() => {
+		const img0 = require('../../photos/sa1.JPG');
+        const img1 = require('../../photos/sa2.JPG');
+        const img2 = require('../../photos/sa4.JPG');
+        const img3 = require('../../photos/sa5.JPG');
+        const img4 = require('../../photos/sa6.JPG');
+        const img5 = require('../../photos/sa7.JPG');
+        const img6 = require('../../photos/sa8.JPG');
+        const img7 = require('../../photos/sa3.JPG');
+        const img8 = require('../../photos/saboii.JPG');
+        setState({
+            index: 0,
+            imgList: [ img1, img2, img3, img4, img5, img6, img7, img8],
+            name: ['Rohit Narulkar', 'Suniti Gaonkar', 'Aishwarya Parab', 'Shivam Raikar', 'Aarushi Raghav', 'Vritika Naik', 'Erisha Ferrao', 'Deepraj Bhosle'],
+            designation: ['President', 'Chairperson', 'Literature section', 'Art Section', 'PR & Managment', 'Technical Adviser', 'Secretary', 'Assistance Technical Advisar']
+        })
+	},[])
+	const responsive = {
+        superLargeDesktop: {
+          // the naming can be any, depends on you.
+          breakpoint: { max: 4000, min: 3000 },
+          items: 5
+        },
+        desktop: {
+          breakpoint: { max: 3000, min: 1000 },
+          items: 3
+        },
+        tablet: {
+          breakpoint: { max: 1000, min: 700},
+          items: 2
+        },
+        mobile: {
+          breakpoint: { max: 700 , min: 0 },
+          items: 1
+        }
+	  };
+	  
+		if(!state.imgList)
+	  		return<></>
+	else{
+	return (
+    <>
+    {/* <h1 className={styles.heading}><span>Saviskar Council 2019-2020</span></h1> */}
+    <h1 className={styles.heading}>Saviskar Council 2019-2020</h1>
+		<div className={styles.spacing}>
+            <Carousel responsive={responsive} autoPlaySpeed={200}>
+				{state.imgList.map((e,i)=>
+					<div className={styles.card} key={i} >
+					<img src={e} alt="Avatar" className={styles.image}/>
+					<div className={styles.container}>
+				<h4 className={styles.name}>{state.name[i]}</h4> 
+						<p className={styles.designation}>{state.designation[i]}</p> 
+					</div> 
+					</div>	
+				)}
+			{/* <div className={styles.card} >
+				<img src="https://cdn.pixabay.com/photo/2014/05/03/01/03/macbook-336704_960_720.jpg" alt="Avatar" style={{width:"100%"}}/>
+				<div className={styles.container}>
+					<h4><b>John Doe</b></h4> 
+					<p>Architect & Engineer</p> 
+				</div> 
+				</div>*/}
+			</Carousel>
+        </div>
+        <h1 className={styles.heading}>From the Faculty</h1>
+        </>
+	)}
 }
+
 export default Carosel

@@ -229,6 +229,7 @@ h3{
         font-size:20px;
     }
 } */
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@500&display=swap');
 .background{
     background-image:linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,.5)),url("PIXNIO-291615-4377x3283.jpg") ;
     background-repeat: no-repeat;
@@ -252,60 +253,24 @@ body{
 *{
 	box-sizing: border-box;
 }
-
-.thumbnailslider{
-	width: 100%;
-	float: left;
-	overflow: hidden;
-}
-
-.thumbnailslider .thumbnailcontainer{
-	width: 100%;
-	float: left;
-	transition: margin 1s ease;
-}
-.thumbnailcontainer{
-	width: 200px;
-}
-.thumbnailslider .item{
-	width: 200px;
-  height: 250px;
-  background-color: grey;
-  line-height: 250px;
-  text-align: center;
-  font-size: 50px;
-  color:#ffffff;
-  float: left;
-}
-
-.thumbnailslider .controls{
-	width: 100%;
-	float: left;
-	padding:15px;
-}
-
-.thumbnailslider .controls ul{
-	display: block;
-	text-align: center;
-	padding:0;
-	margin:0;
-	list-style: none;
-}
-.thumbnailslider .controls ul li{
-	height: 15px;
-	width: 15px;
-	border:1px solid #c3c3c3;
-	margin:4px;
-	display: inline-block;
-	line-height: 33px;
-	cursor: pointer;
-	border-radius: 50%;
-}
-.thumbnailslider .controls ul li.active{
-	background-color: yellow;
-	color:#ffffff;
-}
-.item{
-	
-}
-
+.heading {
+	margin:50px auto;
+	width: 60%;
+	display: flex;
+	flex-direction: row;
+	font-size:30px ;
+	color: rgb(215, 215, 25);    font-family: 'Lemonada', cursive;
+	/* color:black; */
+  }
+  .heading:before, .heading:after{
+	content: "";
+	flex: 1 1;
+	border-bottom: 1px solid rgb(215, 215, 25);
+	margin: auto;
+  }
+  .heading:before {
+	margin-right: 10px
+  }
+  .heading:after {
+	margin-left: 10px
+  }

@@ -25,12 +25,10 @@ function App() {
   
   return (
      
-    // <div className='background'>
+    <div className='background'>
       <Router>
-        <Carousel/>
-        {/* <Carosel /> */}
-            {/* <Navigator />
-            <Route path="/" exact component={Home}/> */}
+            <Navigator />
+            <Route path="/" exact component={Home}/> 
             {/* <Route path='/home' exact component={Home} />
             <Route path='/signin' exact component={User} />
             <Route path='/admin' exact component={LoginAdmin} />
@@ -44,7 +42,7 @@ function App() {
             <Route path="/addPaint" extends component={AddPaint} /> 
             <Route path="/addVideo" extends component={AddVideo} />*/}
       </Router>
-  //  </div>
+   </div>
   );
 }
 

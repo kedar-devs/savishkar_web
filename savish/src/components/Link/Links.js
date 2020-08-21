@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
+import styles from "./Link.module.css"
 import {Link} from 'react-router-dom';
+import storybook from '../../icons/stroybook.svg'
+import poem from "../../icons/poem.svg"
+import painting from "../../icons/painting.svg"
+import video from "../../icons/video.svg"
  class Links extends Component {
     render() {
         return (
-            <div className={
-                
-            }>
-
+            <>
+            <h1 className={styles.abtheading} className="heading">Art works</h1>
+            <div className={styles.linkcomponent}>
+                <div className={styles.poem}><Link to="/poemdisp"><p><img src={poem} alt="poem pic"/>Poem</p></Link></div>
+                <div className={styles.paint}><Link to="/paintdisp"><p><img src="https://img.icons8.com/color/48/000000/drawing--v2.png"/>Painting</p></Link></div>
+                <div className={styles.story}><Link to="/STORYdisp"><p><img src={storybook} alt="story pic"/>Stories</p></Link></div>
+                <div className={styles.video}><Link to="/videodisp"><p><img src="https://img.icons8.com/fluent/48/000000/video.png"/>Video</p></Link></div>
             </div>
+            </>
         )
     }
 }

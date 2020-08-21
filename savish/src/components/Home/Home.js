@@ -1,6 +1,6 @@
 import React from 'react'
 import Info from '../AboutUs/About';
-import Artwork from '../Links.js';
+import Artwork from '../Link/Links.js';
 import styles from "./Home.module.css"
 function Home() {
     return (
@@ -9,13 +9,14 @@ function Home() {
             
         </div>
         <div className={styles.savishkarheading}>
-            <h2 className={styles.savishkarhead}>Sometext</h2>
+            <h2 className={styles.savishkarhead}>Savishkar</h2>
             <br />
-            <h3 className={styles.savishkarcaption}>Somemore text</h3>        
+            <h3 className={styles.savishkarcaption}>GEC Art And Literature Club</h3>        
         </div>
         <section className={styles.abtsection}>
             <Info />
         </section>
+        <Artwork />
         </>
     )
 }
@@ -43,6 +44,4 @@ export default Home
         <div className="pre-sec-half" />
     </div>
 </div>
-
-
 </div> */}

@@ -3,63 +3,65 @@ import princalsir from '../../photos/pricy.jpg';
 import habbusir from '../../photos/habbu.jfif';
 import teampic from '../../photos/IMG_7245.JPG';
 import styles from "./AboutUs.module.css"
+import Carosel from "../Carosel/Carosel"
 import "../../css/important.css"
 class About extends Component {
     constructor() {
         super()
 
-        this.onClickLeft = this.onClickLeft.bind(this)
-        this.onClickRight = this.onClickRight.bind(this)
+    //     this.onClickLeft = this.onClickLeft.bind(this)
+    //     this.onClickRight = this.onClickRight.bind(this)
 
-        const img0 = require('../../photos/sa1.JPG');
-        const img1 = require('../../photos/sa2.JPG');
-        const img2 = require('../../photos/sa4.JPG');
-        const img3 = require('../../photos/sa5.JPG');
-        const img4 = require('../../photos/sa6.JPG');
-        const img5 = require('../../photos/sa7.JPG');
-        const img6 = require('../../photos/sa8.JPG');
-        const img7 = require('../../photos/sa3.JPG');
-        const img8 = require('../../photos/saboii.JPG');
-        this.state = {
-            index: 0,
-            imgList: [img0, img1, img2, img3, img4, img5, img6, img7, img8],
-            name: ['Savishkar', 'Rohit Narulkar', 'Suniti Gaonkar', 'Aishwarya Parab', 'Shivam Raikar', 'Aarushi Raghav', 'Vritika Naik', 'Erisha Ferrao', 'Deepraj Bhosle'],
-            designation: ['Council', 'President', 'Chairperson', 'Literature section', 'Art Section', 'PR & Managment', 'Technical Adviser', 'Secretary', 'Assistance Technical Advisar']
-        }
-    }
-    onClickLeft() {
-        if (this.state.index - 1 === -1) {
-            this.setState({
-                index: this.state.imgList.length - 1
-            })
-        }
-        else {
-            this.setState({
-                index: this.state.index - 1
-            })
-        }
-    }
+    //     const img0 = require('../../photos/sa1.JPG');
+    //     const img1 = require('../../photos/sa2.JPG');
+    //     const img2 = require('../../photos/sa4.JPG');
+    //     const img3 = require('../../photos/sa5.JPG');
+    //     const img4 = require('../../photos/sa6.JPG');
+    //     const img5 = require('../../photos/sa7.JPG');
+    //     const img6 = require('../../photos/sa8.JPG');
+    //     const img7 = require('../../photos/sa3.JPG');
+    //     const img8 = require('../../photos/saboii.JPG');
+    //     this.state = {
+    //         index: 0,
+    //         imgList: [img0, img1, img2, img3, img4, img5, img6, img7, img8],
+    //         name: ['Savishkar', 'Rohit Narulkar', 'Suniti Gaonkar', 'Aishwarya Parab', 'Shivam Raikar', 'Aarushi Raghav', 'Vritika Naik', 'Erisha Ferrao', 'Deepraj Bhosle'],
+    //         designation: ['Council', 'President', 'Chairperson', 'Literature section', 'Art Section', 'PR & Managment', 'Technical Adviser', 'Secretary', 'Assistance Technical Advisar']
+    //     }
+    // }
+    // onClickLeft() {
+    //     if (this.state.index - 1 === -1) {
+    //         this.setState({
+    //             index: this.state.imgList.length - 1
+    //         })
+    //     }
+    //     else {
+    //         this.setState({
+    //             index: this.state.index - 1
+    //         })
+    //     }
+    // }
 
-    onClickRight() {
-        if (this.state.index === this.state.imgList.length - 1) {
-            this.setState({
-                index: 0
-            })
-        }
-        else {
-            this.setState({
-                index: this.state.index + 1
-            })
-        }
+    // onClickRight() {
+    //     if (this.state.index === this.state.imgList.length - 1) {
+    //         this.setState({
+    //             index: 0
+    //         })
+    //     }
+    //     else {
+    //         this.setState({
+    //             index: this.state.index + 1
+    //         })
+    //     }
     }
     render() {
         return (
             <>
-            <h1 className={styles.abtheading}>About Us</h1>
+            <h1 className={styles.abtheading} className="heading">About Us</h1>
             <div className={styles.teamimagediv}>
                 <img src={teampic} className={styles.teampic}/>
                 <p className={styles.whatissavishkar}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now u</p>
             </div>
+            <Carosel />
             <div className={styles.gecfacultyvoice}>
                     <img src={princalsir} />
                     <h4>From the Principals desk</h4>
