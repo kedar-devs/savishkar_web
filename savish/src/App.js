@@ -18,6 +18,7 @@ import AddVideo from './components/AddVideo';
 import AddPaint from './components/AddPaint';
 import Carosel from './components/Carosel/Carosel'
 import Carousel from './components/carousel';
+import Footer from './components/Footer/Footer';
 // import './App.css'
 // import About from './components/About.js'
 //import store from '/store';
@@ -41,6 +42,7 @@ function App() {
             <Route path="/addStory" extends component={AddStory} />
             <Route path="/addPaint" extends component={AddPaint} /> 
             <Route path="/addVideo" extends component={AddVideo} />*/}
+            <Footer />
       </Router>
    </div>
   );
