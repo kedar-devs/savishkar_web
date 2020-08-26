@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import {Link} from "react-router-dom";
-
+import DisplayUser from './DisplayUser';
 
 class Things extends Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class Things extends Component {
           
           </tbody>
         </table>
-       
+       <DisplayUser />
       </div>
      
     )

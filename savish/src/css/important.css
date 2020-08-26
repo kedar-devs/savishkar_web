@@ -1,4 +1,4 @@
-
+/* 
 .black{
     background: black;
     color: white;
@@ -11,19 +11,14 @@
     text-transform: uppercase;
     font-size: 48px;
 }
-
-
 header::after{
     content: '';
     display: table;
     clear:both;
 }
-
-
 .butts{
-    background:rgb(11, 240, 163);
-    border:1px solid white;
-    border-radius: 50%;
+    background:lightgrey;
+    height:480px;
 }
 .butt-right{
     background: black;
@@ -84,8 +79,9 @@ i:hover{
     transform: rotate(135deg);
 }
 .council-img{
-    height:250px;
-    width: 230px;
+    height:450px;
+    width: 800px;
+
 }
 .underheading{
     color: ivory;
@@ -105,20 +101,19 @@ h3{
     
     
 }
-.background{
-    background-image:url("background.jpg") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: auto;
-    min-height: 800px;
-    -webkit-background-size: 100%;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    width: auto;
-    position:center;
-    background-color: #464646;
-    background-attachment: fixed;
-    background-position: center center;     
+.saviskar{
+    /* margin-top: 200px; */
+    /* padding-top: 270px;
+    padding-left: -5px; */
+    /* background-color: aquamarine; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-53%,60%);
+    background: transparent;
 }
 .pre-first-half{
     height:170px;
@@ -153,7 +148,6 @@ h3{
     width: 300px;
     border: 2px solid blue;
     border-style: dashed;
-
 }
 .name{
     background-color:rgb(11, 240, 163);
@@ -227,7 +221,6 @@ h3{
 
 }
 
-
 @media(max-width:1000px){
     h2{
         font-size:45px;
@@ -235,4 +228,49 @@ h3{
     h3{
         font-size:20px;
     }
+} */
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@500&display=swap');
+.background{
+    background-image:linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,.5)),url("PIXNIO-291615-4377x3283.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow-y: auto;
+    /* min-height: 100vh; */
+    -webkit-background-size: 100%;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    width: auto;
+    position:center;
+     background-color: #464646; 
+    background-attachment: scroll;
+    background-position: center center;     
 }
+body{
+	margin:0;
+	font-family: sans-serif;
+}
+*{
+	box-sizing: border-box;
+}
+.heading {
+	margin:50px auto;
+	width: 60%;
+	display: flex;
+	flex-direction: row;
+	font-size:30px ;
+	color: rgb(215, 215, 25);    font-family: 'Lemonada', cursive;
+	/* color:black; */
+  }
+  .heading:before, .heading:after{
+	content: "";
+	flex: 1 1;
+	border-bottom: 1px solid rgb(215, 215, 25);
+	margin: auto;
+  }
+  .heading:before {
+	margin-right: 10px
+  }
+  .heading:after {
+	margin-left: 10px
+  }
