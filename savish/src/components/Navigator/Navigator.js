@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from'react-bootstrap/NavDropdown'
+import {Link} from 'react-router-dom';
 import styles from './Navigator.module.css';
 import logo from "../../photos/sa14.JPG"
 import hamburgericon from "../../icons/hamburgericon.svg"
@@ -53,7 +54,7 @@ function Navigator() {
             </div>
             <img src={closebtn} className={styles.closebtn} ref={e=>closedbtn=e} onClick={responsiveNavbarClose}/>
               <ul className={styles.navlinks}   ref={(e)=>{resnavrref=e}}>
-                <li className={styles.navlink}>Home</li>
+                <Link to="/" className={styles.link}><li className={styles.navlink}>Home</li></Link>
                 <li className={styles.navlink}>Sign In</li>
                 <li className={styles.navlink}>Log In</li>
               </ul>

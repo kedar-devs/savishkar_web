@@ -302,7 +302,7 @@ function Carosel() {
     {/* <h1 className={styles.heading}><span>Saviskar Council 2019-2020</span></h1> */}
     <h1 className={styles.heading}>Saviskar Council 2019-2020</h1>
 		<div className={styles.spacing}>
-            <Carousel responsive={responsive} autoPlaySpeed={200}>
+            <Carousel responsive={responsive} autoPlaySpeed={2500} autoPlay={true}>
 				{state.imgList.map((e,i)=>
 					<div className={styles.card} key={i} >
 					<img src={e} alt="Avatar" className={styles.image}/>

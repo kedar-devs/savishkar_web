@@ -1,32 +1,20 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import CardGroup from 'react-bootstrap/CardGroup'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-//import CardGroup from 'react-bootstrap/CardGroup'
-import { Link, BrowserRouter as Router, Route } from 'react-router-dom'
 import Reactplayer from 'react-player'
-import View from './View'
+import styles from './Display.module.css';
 
-/*onClicBut()
-{
-    <View video={props.video} />
-}*/
 const Video = props => {
-    console.log("lets get what we want")
     return (
-
-        <Card style={{width:"20rem"}}>
-
-            <Card.Body>
+        <div className={styles.display}>
+            <div>
                 <Reactplayer
+                    width='450px'
+                    height='300px'
                     url={props.video.content}
-                    style={{width:"19rem"}}
                 />
-                <Card.Title>{props.video.title}</Card.Title>
-                <Button variant="primary"><Link to={'"/view/' + props.video._id}>View</Link></Button>
-            </Card.Body>
-        </Card>
+                <div className={styles.tag}>{props.video.title}</div>
+            </div>
+        </div>
     )
 }
 
@@ -55,10 +43,10 @@ class DisplayStory extends Component {
     }
     render() {
         return (
-            <div className="container">
-                <CardGroup>
+            <div>
+                <div className={styles.video}>
                     {this.videolist()}
-                </CardGroup>
+                </div>
             </div>
         )
     }
