@@ -52,7 +52,34 @@ router.post('/add',upload.single('content'),(req,res)=>{
     })
 
 })
+router.post('/adduser',(req,res)=>{
+    
+    const title=req.body.title
+    const content=req.body.content
+    const Author=req.body.Author
+    const about=req.body.about
+    const date=Date(req.body.date)
 
+    const newUser=new Poems({title,content,Author,date,about})
+
+    newUser.save()
+    .then(result => {
+        res.status(201).json({
+            message: "User registered successfully!",
+            userCreated: {
+                title:result.title,
+                content:result.content
+            }
+        })
+    })
+    .catch(err => {
+        console.log(err),
+            res.status(500).json({
+                error: err
+            });
+    })
+
+})
 router.route('/:id').get((req,res)=>{
     Storys.findById(req.params.id)
     .then(story=>res.json(story))

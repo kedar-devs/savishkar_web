@@ -17,15 +17,23 @@ const userSchema=new Schema({
     },
     email:{
         type:String,
-        required:true,
+        required:true
     },
     password:{
         type:String,
-        required:true
-    }
+        required:true,
+        minlength:8
+    },
+    content:{
+        type:String,
+        required:false
+    },
+    discription:{type:String,required:true},
+    title:{type:String,required:true},
+    type:{type:String,required:true}
     
 })
 
 const user=mongoose.model('user',userSchema);
 
-module.exports = user
+module.exports=user
