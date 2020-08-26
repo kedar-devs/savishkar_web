@@ -1,17 +1,13 @@
 import React, { Component } from 'react'
-import logo from '../photos/sa14.JPG';
+import logo from '../../photos/newlogo.jpeg';
 import axios from 'axios';
 import {router} from "react-router-dom";
 //import {Redirect} from 'react-router-dom';
 //import Things from './Things';
 import {BrowserRouter as Router,Route} from 'react-router-dom';
-
-
-
+import styles from "./Login.module.css"
 
 class LoginAdmin extends Component {
-
-    
     constructor() {
         super()
         this.state = {
@@ -40,16 +36,28 @@ class LoginAdmin extends Component {
             console.log("aahhh, this gives me orgasm...success betichod success:",res)
         })
         .catch(err=>console.log(err))
-
-        
-
-
     }
     render() {
         const { error } = this.state;
         return (
-            <div>
-                <div className="row">
+            <div className={styles.loginformpage}>
+               <form onSubmit={this.onSubmit} method="POST" className={styles.loginform}>
+                    <fieldset>
+                        <img src={logo} alt="Savishkar logo" />
+                        <h1>Login</h1>
+                        <input type="text" className={styles.username} name="username"  placeholder="Username" value={this.state.username} onChange={this.onChange} />
+                        <small id="emailHelp" className={styles.emailhelp}>u'r secret is safe with us</small>
+                        <input type="password" className={styles.password} name="password" placeholder="Password" value={this.state.password} onChange={this.onChange} />
+                        <button type="submit" className={styles.loginbtn} >Submit</button>
+                    </fieldset>
+               </form>
+            </div>
+        )
+    }
+}
+
+export default LoginAdmin
+ {/* <div className="row">
                     <div className='col-md-6 col-sm-6'>
                         <img src={logo} alt="sorry couldnt load" />
                     </div>
@@ -69,10 +77,4 @@ class LoginAdmin extends Component {
                             <button type="submit" className="btn btn-primary" >Submit</button>
                         </form>
                     </div>
-                </div>
-            </div>
-        )
-    }
-}
-
-export default LoginAdmin
+                </div> */}

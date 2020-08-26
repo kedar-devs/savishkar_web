@@ -88,7 +88,7 @@ class AddPoem extends Component {
                 </div>
               </div>
               <div className="form-group">
-                <label>Discription</label>
+                <label>Description</label>
                 <input type="text" className="form-control input"  placeholder="please add the description" name="about" onChange={this.onChange} />
               </div>
               <div className="form-group">
