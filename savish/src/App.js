@@ -4,8 +4,8 @@ import './css/important.css';
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 import Navigator from './components/Navigator/Navigator';
 import Contact from './components/Contact';
-import LoginAdmin from './components/LoginAdmin.js';
-import User from './components/User.js';
+import LoginAdmin from './components/Login/LoginAdmin.js';
+import User from './components/Login/User.js';
 import Things from './components/Things';
 import DisplayPoem from './components/DisplayPoem.js';
 import DisplayVideo from './components/DisplayVideo.js';
@@ -29,7 +29,8 @@ function App() {
     <div className='background'>
       <Router>
             <Navigator />
-            <Route path="/" exact component={Home}/> 
+            <User />
+            {/* <Route path="/" exact component={Home}/>  */}
             {/* <Route path='/home' exact component={Home} />
             <Route path='/signin' exact component={User} />
             <Route path='/admin' exact component={LoginAdmin} />
