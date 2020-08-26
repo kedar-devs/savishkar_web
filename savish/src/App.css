@@ -41,8 +41,8 @@
     transform: rotate(360deg);
   }
 } */
-.background{
-  /* background-image:linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,.5)),url("css/PIXNIO-291615-4377x3283.jpg") ;
+/* .background{
+  background-image:linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,.5)),url("css/PIXNIO-291615-4377x3283.jpg") ;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -54,7 +54,7 @@
    background-color: #464646; 
   background-attachment: fixed;
   background-position: center center;      */
-}
+
 *{
 	box-sizing: border-box;
 }
@@ -111,7 +111,5 @@
 	background-color: yellow;
 	color:#ffffff;
 }
-.item{
-	
-}
+
 
