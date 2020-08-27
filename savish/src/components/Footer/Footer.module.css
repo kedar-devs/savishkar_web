@@ -12,6 +12,7 @@
     align-items: center;
     color: white;
     padding: 2% 0;
+    height: 20vh;
 }
 .sitemap{
     /* width: 30%; */
@@ -41,7 +42,7 @@
     font-size: 30px;
     font-family: 'Lemonada', cursive;
 }
-footer span{
+.footer span{
     font-weight: 900;
 }
 @media(max-width:900px)
@@ -50,11 +51,12 @@ footer span{
         font-size: 10px;
     }
 }
-@media(max-width:600px)
+@media(max-width:700px)
 {
-    footer{
+    .footer{
         flex-wrap: wrap;
         padding: 2% 4%;
+        height: auto;
     }
     .explore,.location{
         width: 50%;

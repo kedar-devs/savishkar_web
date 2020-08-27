@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 .loginformpage{
-    min-height: 54.5vh;
+    min-height: calc(68vh - 50px);
 }
 .loginform{
     background:rgba(0, 0, 0, 0.6);
@@ -20,6 +20,7 @@
     text-align: center;
     width: fit-content;
     font-family: "Poppins";
+    border:none;
 }
 .loginform img{
     width: 70px;
@@ -41,6 +42,13 @@
     outline: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     margin: 20px 10px;
+    width: 400px;
+    color: aliceblue;
+}
+.loginform span input{
+    width: 170px;
+    margin-right: 50px;
+    margin-bottom: 0px;
 }
 .loginform input::placeholder{
     color:rgba(255, 255, 255, 0.7);
@@ -56,6 +64,9 @@
     color:rgba(255, 255, 255, 1);
     margin-top: -12px;    
     font-family: "Poppins";
+}
+.loginform h2{
+    margin: 20px;
 }
 @media(max-width:700px){
     .loginform{

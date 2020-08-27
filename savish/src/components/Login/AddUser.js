@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import pic from '../photos/sa15.JPG';
+import pic from '../../photos/sa15.JPG';
+import logo from '../../photos/newlogo.jpeg';
+import styles from "./Login.module.css"
 export class AddUser extends Component {
   constructor() {
     super();
@@ -26,7 +28,6 @@ export class AddUser extends Component {
     e.preventDefault()
 
     var user = {
-
       firstname: this.state.firstname,
       lastname: this.state.lastname,
       email: this.state.email,
@@ -47,7 +48,29 @@ export class AddUser extends Component {
   }
   render() {
     return (
-      <div>
+      <div className={styles.loginformpage}>
+      <form onSubmit={this.onSubmit} method="POST" className={styles.loginform}>
+           <fieldset>
+               <img src={logo} alt="Savishkar logo" />
+               <h1>Add User</h1>
+               <span>
+                  <input type="text" name="firstname" value={this.state.firstname} onChange={this.onchange}  placeholder="First Name"/>
+                  <input type="text"  name="lastname" placeholder="Last Name" value={this.state.lastname} onChange={this.onchange} />
+               </span>
+               <input type="email"  name="email" placeholder="Email" value={this.state.email} onChange={this.onchange}/>
+               <input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.onchange}/>
+               {/* <input type="password" name="password" placeholder=" Confirm Password" value={this.state.password} onChange={this.onchange}/> */}
+                <h2>WE WELCOME YOU {this.state.firstname} {this.state.lastname} !!!</h2>
+               <button type="submit" >Submit</button>
+           </fieldset>
+      </form>
+   </div>
+     )
+  }
+}
+
+export default AddUser
+{/* <div>
         <div>
           <div className="row">
             <div className="col-md-6 col-sm-6">
@@ -80,9 +103,4 @@ export class AddUser extends Component {
             </div>
           </div>
         </div>
-      </div>
-    )
-  }
-}
-
-export default AddUser
+      </div> */}

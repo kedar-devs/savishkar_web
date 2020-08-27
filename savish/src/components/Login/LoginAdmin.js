@@ -41,17 +41,18 @@ class LoginAdmin extends Component {
         const { error } = this.state;
         return (
             <div className={styles.loginformpage}>
-               <form onSubmit={this.onSubmit} method="POST" className={styles.loginform}>
-                    <fieldset>
-                        <img src={logo} alt="Savishkar logo" />
-                        <h1>Login</h1>
-                        <input type="text" className={styles.username} name="username"  placeholder="Username" value={this.state.username} onChange={this.onChange} />
-                        <small id="emailHelp" className={styles.emailhelp}>u'r secret is safe with us</small>
-                        <input type="password" className={styles.password} name="password" placeholder="Password" value={this.state.password} onChange={this.onChange} />
-                        <button type="submit" className={styles.loginbtn} >Submit</button>
-                    </fieldset>
-               </form>
-            </div>
+            <form onSubmit={this.onSubmit} method="POST" className={styles.loginform}>
+                 <fieldset>
+                     <img src={logo} alt="Savishkar logo" />
+                     <h1>Login</h1>
+                     <input type="email" className={styles.username} name="username"  placeholder="Username" value={this.state.username} onChange={this.onChange}  />
+                     <small id="emailHelp" className={styles.emailhelp}>u'r secret is safe with us</small>
+                     <input type="password" className={styles.password} name="password" placeholder="Password" value={this.state.password} onChange={this.onChange} />
+                     <button type="submit" className={styles.loginbtn} onClick={this.onSubmit} >Submit</button>
+                 </fieldset>
+            </form>
+         </div>
+    
         )
     }
 }
