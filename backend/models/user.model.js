@@ -4,7 +4,7 @@ const Schema=mongoose.Schema
 
 const userSchema=new Schema({
     firstname:{
-        type:String,
+          type:String,
         required:true,
         trim:true,
         minlength:2
@@ -28,7 +28,7 @@ const userSchema=new Schema({
         type:String,
         required:false
     },
-    discription:{type:String,required:true},
+    description:{type:String,required:true},
     title:{type:String,required:true},
     type:{type:String,required:true}
     

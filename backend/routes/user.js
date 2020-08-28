@@ -38,10 +38,10 @@ router.route('/add').post((req,res)=>{
             const lastname=req.body.lastname
             const email=req.body.email
             const password=req.body.password
-            const content=''
-            const title=''
-            const description=''
-            const type=''
+            const content=' '
+            const title=' '
+            const description=' '
+            const type=' '
             const newUser=new User({firstname,lastname,email,password,content,title,description,type})
 
             newUser.save((err,user)=>{

@@ -71,6 +71,10 @@
 .loginform h2{
     margin: 20px;
 }
+.loginform p{
+    color:red;
+    font-size: 13px;
+}
 @media(max-width:700px){
     .loginform{
         padding:40px 50px;
