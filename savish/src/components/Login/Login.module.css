@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 .loginformpage{
-    min-height: calc(68vh - 50px);
+    min-height: calc(100vh - 265px);
 }
 .loginform{
     background:rgba(0, 0, 0, 0.6);
@@ -44,6 +44,9 @@
     margin: 20px 10px;
     width: 400px;
     color: aliceblue;
+}
+.loginform span{
+    margin: 0px;
 }
 .loginform span input{
     width: 170px;

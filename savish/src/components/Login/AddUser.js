@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import pic from '../../photos/sa15.JPG';
 import logo from '../../photos/newlogo.jpeg';
 import styles from "./Login.module.css"
 export class AddUser extends Component {

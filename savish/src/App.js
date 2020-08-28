@@ -22,8 +22,7 @@ import Footer from './components/Footer/Footer';
 import LoginUser from './components/Login/LoginUser'
 import AddUser from './components/Login/AddUser'
 import DisplayUser from './components/DisplayUser'
-import Func from './components/Func'
-import Stv from './components/Stv'
+import Func from './components/Function/Func'
 // import './App.css'
 // import About from './components/About.js'
 //import store from '/store';
@@ -47,8 +46,8 @@ function App() {
             <Route path="/STORYdisp" exact component={DisplayStory} /> */}
             {/* <Route path="/addpoem" extends component={AddPoem} />
             <Route path="/addStory" extends component={AddStory} />
-            <Route path="/addPaint" extends component={AddPaint} /> 
-            <Route path="/addVideo" extends component={AddVideo} /> */}
+            <Route path="/addPaint" extends component={AddPaint} /> */}
+            <Route path="/addVideo" extends component={AddVideo} /> 
             <Footer />
       </Router>
    </div>
