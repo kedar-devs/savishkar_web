@@ -48,6 +48,11 @@
     padding:10px;
 }
 
+@media(max-width:1500px){
+    .container{
+        margin: 5% 10%;
+    }
+}
 
 @media(max-width:1000px){
     .container{
@@ -60,3 +65,4 @@
         font-size:30px;
     }
 }
+

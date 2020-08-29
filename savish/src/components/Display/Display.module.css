@@ -39,8 +39,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height:350px;
-    max-height:400px;
+    height:400px;
+    width:320px;
+    margin:20px;
 }
 .image{
     width:100%;
@@ -102,8 +103,8 @@
     text-transform: uppercase;
     min-width: 130px;
     font-size:15px;
-
 }
+
 .link{
     text-decoration:none;
 }
@@ -113,10 +114,10 @@
 }
 
 .user{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap:70px;
-    margin:50px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .link{
