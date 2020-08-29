@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import {Link} from "react-router-dom";
-import DisplayUser from '../DisplayUser';
+import DisplayUser from './DisplayUser';
 import styles from './Things.module.css';
 import storybook from '../../icons/stroybook.svg';
 import poem from "../../icons/poem.svg";

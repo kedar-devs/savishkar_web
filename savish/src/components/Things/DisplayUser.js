@@ -4,9 +4,11 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
-import Stv from './Stv.js';
+import Stv from '../Stv.js';
 import axios from 'axios';
-import photu from '../photos/set1.jpg';
+import photu from '../../photos/set1.jpg';
+import styles from '../Display/Display.module.css';
+
 const onAdd=(props)=>{
     
     if(props.user.type === 'poem'){
@@ -112,56 +114,67 @@ const ondelete=(props)=>{
     
 }
 const User=props=>{
-    if(props.user.content===''){
+    if(props.user.type==='poem'){
         return(
-            <div></div>
+            <div>
+                <div className={styles.cardL}>
+                <img className={styles.image}variant="top" src={props.user.content} alt="couldn't load the image"/>
+                <div className={styles.body}>
+                    <div className={styles.title}>{props.user.firstname+props.user.lastname}</div>
+                    <div className={styles.subtitle}>{props.user.title}</div>
+                    <button className={styles.btn}><Link className={styles.link} to={{pathname:'/view/:'+props.user,data:props.user}} >View</Link></button>
+                    <div className={styles.box}>
+                    <button className={styles.outline} onClick={()=>onAdd(props)}>Add</button>
+                    <button  className={styles.outline}  onClick={()=>ondelete(props)}>Remove</button>
+                    </div>
+                </div>
+                </div>
+            </div>
         )
     }
     if(props.user.type==="paint"){
         return(
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={props.user.content} alt="couldn't load the image" style={{height:'18rem'}}></Card.Img>
-                <Card.Body>
-                    <Card.Title>{props.user.firstname+props.user.lastname}</Card.Title>
-                    <Button variant="primary"><Link to={{pathname:'/view/:'+props.user,data:props.user}} >View</Link></Button>
-                    <button variant="secondary" onClick={()=>onAdd(props)}>Add</button>
-                    <button variant="secondary" onClick={()=>ondelete(props)}>Remove</button>
-                </Card.Body>
-            </Card>
+            <div className={styles.cardL}>
+                <img className={styles.image} src={props.user.content} alt="couldn't load the image"/>
+                <div className={styles.body}>
+                    <div className={styles.title}>{props.user.firstname+props.user.lastname}</div>
+                    <div className={styles.subtitle}>{props.user.title}</div>
+                    <button className={styles.btn}><Link className={styles.link} to={{pathname:'/view/:'+props.user,data:props.user}} >View</Link></button>
+                    <div className={styles.box}>
+                    <button className={styles.outline} onClick={()=>onAdd(props)}>Add</button>
+                    <button  className={styles.outline}  onClick={()=>ondelete(props)}>Remove</button>
+                    </div>
+                </div>
+            </div>
         )
     }
     else if(props.user.type!=="video"){
     return(
-    //<Router>
-        
-    <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={photu} style={{ height: '18rem' }} ></Card.Img>
-  <Card.Body>
-    <Card.Title>{props.user.title}</Card.Title>
-    <h4>By:{props.user.firstname}</h4>
-    <h4>About:{props.user.discription}</h4>
-    <Button variant="primary"><Link to={{pathname:'/view/:'+props.user,data:props.user}} >View</Link></Button>
-    <button variant="secondary" onClick={()=>onAdd(props)}>Add</button>
-    <button variant="secondary" onClick={()=>ondelete(props)}>Remove</button>
-    
-  </Card.Body>
-  </Card>
-  //</Router>
+        <div className={styles.cardL}>
+            <img className={styles.image} src={photu}/>
+            <div className={styles.body}>
+                <div className={styles.title}>{props.user.title}</div>
+                <div className={styles.subtitle}><span>By:{props.user.firstname}</span><span>About:{props.user.discription}</span></div>
+                <button className={styles.btn}><Link className={styles.link} to={{pathname:'/view/:'+props.user,data:props.user}} >View</Link></button>
+                <div className={styles.box}>
+                    <button className={styles.outline} onClick={()=>onAdd(props)}>Add</button>
+                    <button className={styles.outline} onClick={()=>ondelete(props)}>Remove</button>
+                </div>        
+            </div>
+        </div>
     )
     }
     else{
         return(
-            <Card style={{width:"20rem"}}>
-
-            <Card.Body>
+            <div className={styles.cardL}>
+            <div className={styles.body}>
                 <Reactplayer
                     url={props.user.content}
                     style={{width:"19rem"}}
                 />
-                <Card.Title>{props.user.title}</Card.Title>
-                <Button variant="primary"><Link to={{pathname:'/view/:'+ props.user,data:props.user}}>View</Link></Button>
-            </Card.Body>
-        </Card>
+                <div className={styles.title}>{props.user.title}</div>
+            </div>
+            </div>
         )
     }
     
@@ -195,11 +208,10 @@ class DisplayStory extends Component {
     render() {
         return (
             <Router>
-            <div className="container">
-               <CardGroup>
-  
+            <div>
+                <div className={styles.user}>
                 {this.userlist()}
-            </CardGroup> 
+                </div> 
             <Route path="/view/:story" exact component={Stv}/>
             </div>
             </Router>

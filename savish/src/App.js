@@ -20,7 +20,7 @@ import Carosel from './components/Carosel/Carosel'
 import Footer from './components/Footer/Footer';
 import LoginUser from './components/Login/LoginUser'
 import AddUser from './components/Login/AddUser'
-import DisplayUser from './components/DisplayUser'
+import DisplayUser from './components/Things/DisplayUser'
 import Func from './components/Func'
 import Credits from './components/Credits/Credits';
 // import './App.css'
