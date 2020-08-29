@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import logo from '../../photos/newlogo.jpeg';
 import styles from "./Login.module.css"
 function validateEmail(email) {
+  // eslint-disable-next-line 
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
 export class AddUser extends Component {
   constructor() {
     super();
-
-
     this.state = {
       firstname: '',
       lastname: '',

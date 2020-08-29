@@ -13,7 +13,7 @@ export default function Display({posts}) {
                     <div className={styles.body}>
                         <div className={styles.title}>{post.poet||post.Author}</div>
                         <div className={styles.subtitle}>{post.title}</div>
-                        <button className={styles.btn} onClick={ () => (setOpen(true), setInfo(post))}>View</button>
+                        <button className={styles.btn} onClick={ () => {setOpen(true);setInfo(post)}}>View</button>
                     </div>
                     </div>
                 ))}
