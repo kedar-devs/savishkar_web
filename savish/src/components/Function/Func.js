@@ -158,11 +158,10 @@ class Func extends Component {
         }
         else{
             const {history}=this.props
-            this.props.history.push("loginuser")
+            history.push("loginuser")
             return (<div></div>)
         }
     }
 
 }
-
 export default Func

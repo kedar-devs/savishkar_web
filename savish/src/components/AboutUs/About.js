@@ -29,31 +29,31 @@ class About extends Component {
     //         designation: ['Council', 'President', 'Chairperson', 'Literature section', 'Art Section', 'PR & Managment', 'Technical Adviser', 'Secretary', 'Assistance Technical Advisar']
     //     }
     // }
-    onClickLeft() {
-        if (this.state.index - 1 === -1) {
-            this.setState({
-                index: this.state.imgList.length - 1
-            })
-        }
-        else {
-            this.setState({
-                index: this.state.index - 1
-            })
-        }
-    }
+    // onClickLeft() {
+    //     if (this.state.index - 1 === -1) {
+    //         this.setState({
+    //             index: this.state.imgList.length - 1
+    //         })
+    //     }
+    //     else {
+    //         this.setState({
+    //             index: this.state.index - 1
+    //         })
+    //     }
+    // }
 
-    onClickRight() {
-        if (this.state.index === this.state.imgList.length - 1) {
-            this.setState({
-                index: 0
-            })
-        }
-        else {
-            this.setState({
-                index: this.state.index + 1
-            })
-        }
-    }
+    // onClickRight() {
+    //     if (this.state.index === this.state.imgList.length - 1) {
+    //         this.setState({
+    //             index: 0
+    //         })
+    //     }
+    //     else {
+    //         this.setState({
+    //             index: this.state.index + 1
+    //         })
+    //     }
+    // }
     render() {
         return (
             <>
