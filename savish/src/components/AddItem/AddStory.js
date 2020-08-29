@@ -9,6 +9,7 @@ class AddStory extends Component {
     this.onSubmit = this.onSubmit.bind(this)
     this.onChange = this.onChange.bind(this)
     this.changes = this.changes.bind(this)
+    this.warningref=React.createRef()
     this.state = {
       Author: '',
       content: null,
@@ -48,7 +49,9 @@ class AddStory extends Component {
         console.log(res.data)
 
       })
-      .catch(err => console.log('ERROR:' + err))
+      .catch(err =>{ console.log('ERROR:' + err)
+      this.warningref.current.innerText="*Opps not you Sorry! its our fault!Please try again in a while*";}
+      )
     window.location = '/'
   }
   render() {
@@ -57,6 +60,7 @@ class AddStory extends Component {
       <img src={logo} alt="savishkar logo" />
            <form  encType="multipart/form-data" action="http://localhost:3000/story/add" method="post" className={styles.addform}>
               <h2>Add a paint</h2>
+              <p ref={this.warningref} ></p>
               <input type="text" name="title" id="title" placeholder="Title of the story" value={this.state.title} onChange={this.onChange}/>
               <input type="text" id="Author" placeholder="Authors name" name="Author" value={this.state.Author} onChange={this.onChange} />
               <input type="text" placeholder="Description" name="about" onChange={this.onChange}  />

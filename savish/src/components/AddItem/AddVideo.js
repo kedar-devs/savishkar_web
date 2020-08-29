@@ -8,6 +8,7 @@ class AddVideo extends Component {
 
     this.onSubmit = this.onSubmit.bind(this)
     this.onChange = this.onChange.bind(this)
+    this.warningref=React.createRef()
     
     this.state = {
       creator: '',
@@ -40,7 +41,9 @@ class AddVideo extends Component {
         this.props.history.push("things")
         console.log(res.data)
         })
-      .catch(err => console.log('ERROR:' + err))
+      .catch(err => {console.log('ERROR:' + err)
+      this.warningref.current.innerText="*Opps not you Sorry! its our fault!Please try again in a while*"
+      })
     window.location = '/things'
   }
   render() {
@@ -49,6 +52,7 @@ class AddVideo extends Component {
       <img src={logo} alt="savishkar logo" />
            <form  onSubmit={this.onSubmit} method="post" className={styles.addform}>
               <h2>Add a Video</h2>
+               <p ref={this.warningref} ></p>
               <input type="text" id="title" placeholder="Title" name="title" value={this.state.title} onChange={this.onChange}/>
               <input type="text" id="inputPassword4" placeholder="Creators name" name="creator" value={this.state.creator} onChange={this.onChange} />
               {/* <input type="text" placeholder="Description" name="about" onChange={this.onChange}  /> */}

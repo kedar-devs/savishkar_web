@@ -9,6 +9,7 @@ class AddPaint extends Component {
     this.onSubmit = this.onSubmit.bind(this)
     this.onChange = this.onChange.bind(this)
     this.contentadd=this.contentadd.bind(this)
+    this.warningref=React.createRef()
     this.state = {
       painter: '',
       content: null,
@@ -39,7 +40,9 @@ class AddPaint extends Component {
       .then(res =>{ 
         this.props.history.push("things")
         console.log(res.data)})
-      .catch(err => console.log('ERROR:' + err))
+      .catch(err =>{ console.log('ERROR:' + err)
+        this.warningref.current.innerText="*Opps not you Sorry! its our fault!Please try again in a while*"
+      })
     window.location = '/'
   }
   render() {
@@ -48,6 +51,7 @@ class AddPaint extends Component {
         <img src={logo} alt="savishkar logo" />
              <form  encType="multipart/form-data" action="http://localhost:3000/paint/add" method="post" className={styles.addform}>
                 <h2>Add a paint</h2>
+                <p ref={this.warningref} ></p>
                 <input type="text" id="title" placeholder="Title" name="title" value={this.state.title} onChange={this.onChange}/>
                 <input type="text" id="painter" placeholder="Creator's name" name="painter" value={this.state.painter} onChange={this.onChange} />
                 {/* <input type="file" className=""  placeholder="Submit .txt or .docx file" name="content" onChange={this.changes} ref={ref=> this.fileInput = ref}/> */}
