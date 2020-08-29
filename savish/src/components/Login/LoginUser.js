@@ -10,6 +10,7 @@ class LoginUser extends Component {
             email:'',
             password:''
         }
+        this.warningref=React.createRef()
         this.onChange= this.onChange.bind(this)
         this.onSubmit=this.onSubmit.bind(this)
     }
@@ -31,15 +32,14 @@ class LoginUser extends Component {
         axios.post("http://localhost:3000/user/login",user)
         .then(res=>{
             console.log(res.data.token)
-            localStorage.setItem('token',res.data.token)
+            localStorage.setItem('token', res.data.token)
             localStorage.setItem('token2',res.data.user._id)
-            
             this.props.history.push("function")
         })
         .catch(err=>{
             console.log(err)
+            this.warningref.current.innerText="*Invalid Credentials*"
         })
-         
     }
     render() {
         return (
@@ -47,10 +47,11 @@ class LoginUser extends Component {
                <form onSubmit={this.onSubmit} method="POST" className={styles.loginform}>
                     <fieldset>
                         <img src={logo} alt="Savishkar logo" />
+                        <p ref={this.warningref} ></p>
                         <h1>Login</h1>
-                        <input type="email" className={styles.username} name="email" placeholder="Username" value={this.state.username} onChange={this.onChange} />
+                        <input type="email" className={styles.username} name="email" placeholder="Username" value={this.state.username} onChange={this.onChange} required />
                         <small id="emailHelp" className={styles.emailhelp}>u'r secret is safe with us</small>
-                        <input type="password" className={styles.password} name="password" placeholder="Password" value={this.state.password} onChange={this.onChange} />
+                        <input type="password" className={styles.password} name="password" placeholder="Password" value={this.state.password} onChange={this.onChange} required/>
                         <button type="submit" className={styles.loginbtn} onClick={this.onSubmit} >Submit</button>
                     </fieldset>
                </form>
@@ -58,7 +59,6 @@ class LoginUser extends Component {
         )
     }
 }
-
 export default LoginUser
             // <div>
             //      <div className="col-md-6 col-sm-6"><h1>Login</h1>

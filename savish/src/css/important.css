@@ -245,6 +245,7 @@ h3{
      background-color: #464646; 
     background-attachment: scroll;
     background-position: center center;     
+    z-index:-10;
 }
 body{
 	margin:0;

@@ -14,9 +14,9 @@ class LoginAdmin extends Component {
             username:'',
             password:''
         }
+        this.warningref=React.createRef()
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
-        
     }
     onChange(e) {
         this.setState({
@@ -33,9 +33,11 @@ class LoginAdmin extends Component {
         axios.post("http://localhost:3000/admin/login",admin)
         .then(res => {
             this.props.history.push("things")
-            console.log("aahhh, this gives me orgasm...success betichod success:",res)
+            console.log("Succesfully logged in",res)
         })
-        .catch(err=>console.log(err))
+        .catch(err=>{console.log(err)
+            this.warningref.current.innerText="*User doesnot exist.Please login*"
+        })
     }
     render() {
         const { error } = this.state;
@@ -45,18 +47,17 @@ class LoginAdmin extends Component {
                  <fieldset>
                      <img src={logo} alt="Savishkar logo" />
                      <h1>Login</h1>
-                     <input type="email" className={styles.username} name="username"  placeholder="Username" value={this.state.username} onChange={this.onChange}  />
+                     <p ref={this.warningref} ></p>
+                     <input type="email" className={styles.username} name="username" required placeholder="Username" value={this.state.username} onChange={this.onChange}  />
                      <small id="emailHelp" className={styles.emailhelp}>u'r secret is safe with us</small>
-                     <input type="password" className={styles.password} name="password" placeholder="Password" value={this.state.password} onChange={this.onChange} />
+                     <input type="password" className={styles.password} name="password" required placeholder="Password" value={this.state.password} onChange={this.onChange} />
                      <button type="submit" className={styles.loginbtn} onClick={this.onSubmit} >Submit</button>
                  </fieldset>
             </form>
          </div>
-    
         )
     }
 }
-
 export default LoginAdmin
  {/* <div className="row">
                     <div className='col-md-6 col-sm-6'>

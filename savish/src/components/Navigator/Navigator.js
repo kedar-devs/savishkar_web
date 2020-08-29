@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav'
 import NavDropdown from'react-bootstrap/NavDropdown'
 import {Link} from 'react-router-dom';
 import styles from './Navigator.module.css';
-import logo from "../../photos/sa14.JPG"
+import logo from "../../photos/newlogo.jpeg"
 import hamburgericon from "../../icons/hamburgericon.svg"
 import closebtn from "../../icons/closebtn.svg"
 function Navigator() {
