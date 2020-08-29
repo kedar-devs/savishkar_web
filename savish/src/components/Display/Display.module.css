@@ -58,6 +58,7 @@
 
 .subtitle{
     font-size:15px;
+    text-transform: capitalize;
 }
 .btn{
     padding:10px;
@@ -70,6 +71,26 @@
     font-size:16px;
     font-weight: 600;
     text-transform: uppercase;
+}
+
+.outline{
+    padding:10px;
+    outline:none;
+    border:none;
+    margin:10px 5px;
+    color:#fff;
+    border:2px solid rgb(215, 215, 25);
+    background-color: rgba(0, 0, 0, 0);
+    font-weight:600;
+    border-radius:5px;
+    text-transform: uppercase;
+    min-width: 130px;
+
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
 }
 
 .link{

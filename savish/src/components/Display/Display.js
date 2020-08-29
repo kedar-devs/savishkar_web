@@ -4,17 +4,17 @@ import FileViewer from 'react-file-viewer';
 export default function Display({posts}) {
     const [info,setInfo] = useState({});
     const [open,setOpen] = useState(false);
-    
+    console.log(posts)
     return (
         <div className={styles.top}>
             <div className={styles.container}>
-                {posts.map((poem,k) => (
+                {posts.map((post,k) => (
                     <div key={k} className={styles.card}>
                     <img className={styles.image} src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="couldn't load the image"/>
                     <div className={styles.body}>
-                        <div className={styles.title}>Deborah Mendes</div>
-                        <div className={styles.subtitle}>Music a form of art</div>
-                        <button className={styles.btn} onClick={() => (setOpen(true), setInfo(poem))}>View</button>
+                        <div className={styles.title}>{post.poet||post.Author}</div>
+                        <div className={styles.subtitle}>{post.title}</div>
+                        <button className={styles.btn} onClick={() => (setOpen(true), setInfo(post))}>View</button>
                     </div>
                     </div>
                 ))}

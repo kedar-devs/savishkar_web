@@ -54,7 +54,8 @@ function Navigator() {
             </div>
             <img src={closebtn} className={styles.closebtn} ref={e=>closedbtn=e} onClick={responsiveNavbarClose}/>
               <ul className={styles.navlinks}   ref={(e)=>{resnavrref=e}}>
-                <Link to="/" className={styles.link}><li className={styles.navlink}>Home</li></Link>
+              <Link to="/" className={styles.link}><li className={styles.navlink}>Home</li></Link>
+                <Link to="/credits" className={styles.link}><li className={styles.navlink}>Credits</li></Link>
                 <li className={styles.navlink}>Sign In</li>
                 <li className={styles.navlink}>Log In</li>
               </ul>

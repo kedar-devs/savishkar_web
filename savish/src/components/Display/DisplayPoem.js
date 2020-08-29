@@ -11,7 +11,7 @@ const Poem = () => {
              })
              .catch(err => console.log(err))
         }
-       
+        console.log(poems)
         getData();
     }, [])
     

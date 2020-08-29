@@ -1,20 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Reactplayer from 'react-player'
 import styles from './Display.module.css';
+import VideoCard from './VideoCard';
 
 const Video = props => {
     return (
-        <div className={styles.display}>
-            <div>
-                <Reactplayer
-                    width='450px'
-                    height='300px'
-                    url={props.video.content}
-                />
-                <div className={styles.tag}>{props.video.title}</div>
-            </div>
-        </div>
+        <VideoCard video={props.video}/>
     )
 }
 
