@@ -57,13 +57,13 @@ class AddStory extends Component {
       <img src={logo} alt="savishkar logo" />
            <form  encType="multipart/form-data" action="http://localhost:3000/story/add" method="post" className={styles.addform}>
               <h2>Add a paint</h2>
-              <input type="text" name="title" id="title" placeholder="Title of the story" name="title"value={this.state.title} onChange={this.onChange}/>
+              <input type="text" name="title" id="title" placeholder="Title of the story" value={this.state.title} onChange={this.onChange}/>
               <input type="text" id="Author" placeholder="Authors name" name="Author" value={this.state.Author} onChange={this.onChange} />
               <input type="text" placeholder="Description" name="about" onChange={this.onChange}  />
               {/* <input type="file" className=""  placeholder="Submit .txt or .docx file" name="content" onChange={this.changes} ref={ref=> this.fileInput = ref}/> */}
               <input type="file" class={styles.customfileinput} id="content" name="content"  onChange={this.changes} />   
               <input type="date" id="date" name="date" value={this.state.date} onChange={this.onChange} />
-              <button type="submit" type="submit">Submit</button>
+              <button type="submit">Submit</button>
            </form>            
     </div>
     )

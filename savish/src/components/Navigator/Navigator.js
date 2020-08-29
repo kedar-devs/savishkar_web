@@ -1,7 +1,4 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import NavDropdown from'react-bootstrap/NavDropdown'
 import {Link} from 'react-router-dom';
 import styles from './Navigator.module.css';
 import logo from "../../photos/newlogo.jpeg"
@@ -52,14 +49,14 @@ function Navigator() {
           <div className={styles.leftnav}>
             <img src={logo} alt="savishlogo" title="Saviskar Logo" className={styles.logo}/>
             </div>
-            <img src={closebtn} className={styles.closebtn} ref={e=>closedbtn=e} onClick={responsiveNavbarClose}/>
+            <img src={closebtn} className={styles.closebtn} ref={e=>closedbtn=e} onClick={responsiveNavbarClose} alt="close btn"/>
               <ul className={styles.navlinks}   ref={(e)=>{resnavrref=e}}>
               <Link to="/" className={styles.link}><li className={styles.navlink}>Home</li></Link>
                 <Link to="/credits" className={styles.link}><li className={styles.navlink}>Credits</li></Link>
                 <li className={styles.navlink}>Sign In</li>
                 <li className={styles.navlink}>Log In</li>
               </ul>
-              <img src={hamburgericon} className={styles.hamburgericon} onClick={responsiveNavbarOpen} />
+              <img src={hamburgericon} alt="hamburger icon" className={styles.hamburgericon} onClick={responsiveNavbarOpen} />
         </header>  
         </div>
     )

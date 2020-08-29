@@ -4,6 +4,8 @@ import instagram from "../../icons/instagram.svg"
 import twitter from "../../icons/twitter.svg"
 import whatsapp from "../../icons/whatsapp.svg"
 import styles from "./Footer.module.css"
+import classnames from 'classnames';
+
 function Footer() {
     return (
         <footer className={styles.footer}>
@@ -11,12 +13,12 @@ function Footer() {
         <div className={styles.explore}>
             <span>Explore</span>
             <div className={styles.sitemap}>
-                <div className={styles.leftexplore} className={styles.column}>
+                <div className={classnames(styles.left,styles.column)}>
                     <p>Home</p>
                     <p>About Us</p>
                     <p>Artwork</p>
                 </div>
-                <div className={styles.rightexplore} className={styles.column}>
+                <div className={classnames(styles.rightexplore,styles.column)}>
                     <p>lorem</p>
                     <p>lorem</p>
                     <p>lorem</p>

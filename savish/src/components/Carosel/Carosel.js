@@ -258,7 +258,6 @@ import styles from './Carosel.module.css'
 function Carosel() {
 	const [state, setState] = useState({})
 	useEffect(() => {
-		const img0 = require('../../photos/sa1.JPG');
         const img1 = require('../../photos/sa2.JPG');
         const img2 = require('../../photos/sa4.JPG');
         const img3 = require('../../photos/sa5.JPG');

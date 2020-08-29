@@ -8,7 +8,7 @@ const PaintCard = ({post,ondelete,onAdd,data}) => {
         <div>
             <div>
                 <div className={styles.card}>
-                <img className={styles.image} src={post.content} alt="couldn't load the image"/>
+                <img className={styles.image} src={post.content} alt="couldn't load"/>
                 <div className={styles.body}>
                     <div className={styles.title}>{post.painter||(post.firstname+post.lastname)}</div>
                     <div className={styles.subtitle}>{post.title}</div>

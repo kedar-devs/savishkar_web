@@ -5,7 +5,6 @@ import './css/about.module.css';
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 import Navigator from './components/Navigator/Navigator';
 import LoginAdmin from './components/Login/LoginAdmin.js';
-import User from './components/Login/User.js';
 import Things from './components/Things/Things';
 import DisplayPoem from './components/Display/DisplayPoem.js';
 import DisplayVideo from './components/Display/DisplayVideo.js';
@@ -16,11 +15,9 @@ import AddPoem from './components/AddItem/AddPoem';
 import AddStory from './components/AddItem/AddStory';
 import AddVideo from './components/AddItem/AddVideo';
 import AddPaint from './components/AddItem/AddPaint';
-import Carosel from './components/Carosel/Carosel'
 import Footer from './components/Footer/Footer';
 import LoginUser from './components/Login/LoginUser'
 import AddUser from './components/Login/AddUser'
-import DisplayUser from './components/Things/DisplayUser'
 import Credits from './components/Credits/Credits';
 import Func from './components/Function/Func'
 // import './App.css'
@@ -56,15 +53,3 @@ function App() {
 }
 
 export default App;
-
-      {/* <div className="container-fluid third-half">
-            <div className="container">
-              <div className="pre-third-half" />
-              <div className="third-half">
-              <h2 className="text-center">Contact Us</h2>
-                <br /><br /><br />
-                <Contact />
-                </div>
-                <div className="pre-third-half" />
-            </div>
-      </div> */}

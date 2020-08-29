@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {BrowserRouter as Router, Route,Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import axios from 'axios'
 import styles from './Function.module.css'
 
@@ -58,7 +58,6 @@ class Func extends Component {
     }
     console.log(user)
     var userid=localStorage.getItem('token2')
-    const {history}=this.props
     axios.post('http://localhost:3000/user/addcontent/'+userid, data)
     .then(res=>{
       console.log(res.data)
@@ -67,7 +66,6 @@ class Func extends Component {
     .catch(err=>console.log(err))
     }
     form=()=>{
-      var userid=localStorage.getItem('token2')
       return(
         <form  encType="multipart/form-data" action="http://localhost:3000/user/addcontent/" onSubmit={this.onSubmit} method="post" className={styles.userinputform}>
             {/* <div  style={{color: 'white'}}>
@@ -150,12 +148,12 @@ class Func extends Component {
           <label for="rb4" className={styles.radiolabel}>Video</label>
         </div>
           <p> You have selected {this.state.type}</p>
-            <input type="text" placeholder="title" name="title" value={this.state.title} onChange={this.onchange} required placeholder="Title"/>
-            <input type="text" placeholder="please add the description" name="discription" onChange={this.onchange} required placeholder="Description" />
+            <input type="text" name="title" value={this.state.title} onChange={this.onchange} required placeholder="Title"/>
+            <input type="text" name="discription" onChange={this.onchange} required placeholder="Description" />
             
         <p>If file upload here</p>
           <input type="file" placeholder="submit txt or docx file" name="content" onChange={this.onfile} ref={ref=> this.fileInput = ref} className={styles.customfileinput}/>
-        <button type="submit" className="btn btn-primary" type="submit" onSubmit={this.onSubmit} >Submit</button>
+        <button type="submit" className="btn btn-primary" onSubmit={this.onSubmit} >Submit</button>
       </form>
       )  
     }
@@ -178,7 +176,6 @@ class Func extends Component {
         )
         }
         else{
-            const {history}=this.props
             this.props.history.push("loginuser")
         }
     }

@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import Reactplayer from 'react-player';
-import CardGroup from 'react-bootstrap/CardGroup';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 import Stv from '../Stv.js';
 import axios from 'axios';
@@ -118,7 +115,7 @@ const User=props=>{
         return(
             <div>
                 <div className={styles.cardL}>
-                <img className={styles.image}variant="top" src={props.user.content} alt="couldn't load the image"/>
+                <img className={styles.image}variant="top" src={props.user.content} alt="couldn't load"/>
                 <div className={styles.body}>
                     <div className={styles.title}>{props.user.firstname+props.user.lastname}</div>
                     <div className={styles.subtitle}>{props.user.title}</div>
@@ -135,7 +132,7 @@ const User=props=>{
     if(props.user.type==="paint"){
         return(
             <div className={styles.cardL}>
-                <img className={styles.image} src={props.user.content} alt="couldn't load the image"/>
+                <img className={styles.image} src={props.user.content} alt="couldn't load"/>
                 <div className={styles.body}>
                     <div className={styles.title}>{props.user.firstname+props.user.lastname}</div>
                     <div className={styles.subtitle}>{props.user.title}</div>
@@ -151,7 +148,7 @@ const User=props=>{
     else if(props.user.type!=="video"){
     return(
         <div className={styles.cardL}>
-            <img className={styles.image} src={photu}/>
+            <img className={styles.image} src={photu} alt="could not load"/>
             <div className={styles.body}>
                 <div className={styles.title}>{props.user.title}</div>
                 <div className={styles.subtitle}><span>By:{props.user.firstname}</span><span>About:{props.user.discription}</span></div>

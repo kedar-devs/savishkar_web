@@ -1,4 +1,4 @@
-import React, { Component,useState } from 'react'
+import React, { Component} from 'react'
 import axios from 'axios'
 import styles from './Display.module.css';
 import PaintCard from './PaintCard';
@@ -6,7 +6,7 @@ import PaintCard from './PaintCard';
 const Paint=props=>{
         return(         
             <PaintCard post={props.paint}/>
-            
+
         )
     
 }

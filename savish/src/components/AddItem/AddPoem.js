@@ -190,8 +190,8 @@ class AddPoem extends Component {
                   <input type="text" className=""  placeholder="Please add the description" name="about" onChange={this.onChange} />
                   {/* <input type="file" className=""  placeholder="Submit .txt or .docx file" name="content" onChange={this.changes} ref={ref=> this.fileInput = ref}/> */}
                   <input type="file" class={styles.customfileinput} name="content" onChange={this.changes} ref={ref=> this.fileInput = ref}/>   
-                  <input type="date" className="" id="inputAddress2" placeholder="Date" value={this.state.date} name="date" onChange={this.onChange} />
-                  <button type="submit" className="" type="submit">Submit</button>
+                  <input type="date" id="inputAddress2" placeholder="Date" value={this.state.date} name="date" onChange={this.onChange} />
+                  <button type="submit">Submit</button>
                </form>            
       </div>
     )

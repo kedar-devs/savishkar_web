@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import pic from '../../photos/sa15.JPG';
 import logo from "../../photos/newlogo.jpeg"
 import styles from "./Additems.module.css"
 // import './../css/adding.css'
@@ -54,7 +53,7 @@ class AddPaint extends Component {
                 {/* <input type="file" className=""  placeholder="Submit .txt or .docx file" name="content" onChange={this.changes} ref={ref=> this.fileInput = ref}/> */}
                 <input type="file" class={styles.customfileinput} onChange={this.contentadd} name="content" id="content"/>   
                 <input type="date" id="date" placeholder="date" name="date" value={this.state.date} onChange={this.onChange} />
-                <button type="submit" type="submit">Submit</button>
+                <button type="submit">Submit</button>
              </form>            
     </div>
     )

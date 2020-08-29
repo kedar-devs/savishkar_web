@@ -54,7 +54,7 @@ class AddVideo extends Component {
               {/* <input type="text" placeholder="Description" name="about" onChange={this.onChange}  /> */}
               <input type="text" className="input form-control" id="inputAddress" placeholder="Link to the video" name="content" value={this.state.content} onChange={this.onChange} />   
               <input type="date"  id="inputAddress2" placeholder="date" name="date" value={this.state.date} onChange={this.onChange} />
-              <button type="submit" type="submit">Submit</button>
+              <button type="submit">Submit</button>
            </form>            
     </div>
 
