@@ -32,6 +32,7 @@ function App() {
         delay:"100",
       duration:"3000",
       easing:"ease-in-out",
+      once:true,
       anchorPlacement:"center-bottom"
       })
   }, [])
