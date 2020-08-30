@@ -6,9 +6,7 @@ import PaintCard from './PaintCard';
 const Paint=props=>{
         return(         
             <PaintCard post={props.paint}/>
-
-        )
-    
+        )   
 }
 
 class DisplayPaint extends Component {
@@ -42,7 +40,7 @@ class DisplayPaint extends Component {
     }
     render() {
         return (
-            <div className={styles.top}>
+            <div className={styles.top} >
                 <div className={styles.container}>
                     {this.paintlist()}
                 </div>

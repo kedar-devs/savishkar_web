@@ -7,7 +7,7 @@ const PaintCard = ({post,ondelete,onAdd,data}) => {
     return (
         <div>
             <div>
-                <div className={styles.card}>
+                <div className={styles.card} data-aos="fade-down" data-aos-offset="-100">
                 <img className={styles.image} src={post.content} alt="couldn't load"/>
                 <div className={styles.body}>
                     <div className={styles.title}>{post.painter||(post.firstname+post.lastname)}</div>

@@ -10,7 +10,7 @@ const Credits = () => {
         <div>
             <p className={styles.header}>Credits</p>
             <div className={styles.container}>
-            <div className={styles.card}>
+            <div className={styles.card} data-aos="flip-left" data-aos-offset="-200">
                 <div className={styles.left}>
                     <img  className={styles.image} src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="profile"/>
                     <div className={styles.icons}>
@@ -27,7 +27,7 @@ const Credits = () => {
                     <p className={styles.body}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et sem ex. Proin fermentum lobortis nisi, ac ornare neque aliquet a.</p>
                 </div>
             </div>
-            <div className={styles.card}>
+            <div className={styles.card} data-aos="flip-left" data-aos-offset="-200">
                 <div className={styles.left}>
                     <img  className={styles.image} src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="profile"/>
                     <div className={styles.icons}>
@@ -44,7 +44,7 @@ const Credits = () => {
                     <p className={styles.body}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et sem ex. Proin fermentum lobortis nisi, ac ornare neque aliquet a.</p>
                 </div>
             </div>
-            <div className={styles.card}>
+            <div className={styles.card} data-aos="flip-left" data-aos-offset="-200">
                 <div className={styles.left}>
                     <img  className={styles.image} src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="profile"/>
                     <div className={styles.icons}>
@@ -61,7 +61,7 @@ const Credits = () => {
                     <p className={styles.body}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et sem ex. Proin fermentum lobortis nisi, ac ornare neque aliquet a.</p>
                 </div>
             </div>
-            <div className={styles.card}>
+            <div className={styles.card} data-aos="flip-left" data-aos-offset="-200">
                 <div className={styles.left}>
                     <img  className={styles.image} src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="profile"/>
                     <div className={styles.icons}>
@@ -78,7 +78,7 @@ const Credits = () => {
                     <p className={styles.body}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et sem ex. Proin fermentum lobortis nisi, ac ornare neque aliquet a.</p>
                 </div>
             </div>
-            <div className={styles.card}>
+            <div className={styles.card} data-aos="flip-left" data-aos-offset="-200">
                 <div className={styles.left}>
                     <img  className={styles.image} src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="profile"/>
                     <div className={styles.icons}>

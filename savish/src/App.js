@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/important.css';
 import './css/about.module.css';
@@ -20,13 +20,22 @@ import LoginUser from './components/Login/LoginUser'
 import AddUser from './components/Login/AddUser'
 import Credits from './components/Credits/Credits';
 import Func from './components/Function/Func'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 // import './App.css'
 // import About from './components/About.js'
 //import store from '/store';
 function App() {
-  
-  return (
-     
+  useEffect(() => {
+      AOS.init();
+      AOS.init({
+        delay:"100",
+      duration:"3000",
+      easing:"ease-in-out",
+      anchorPlacement:"center-bottom"
+      })
+  }, [])
+  return (     
     <div className='background'>
       <Router>
             <Navigator />

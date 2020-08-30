@@ -8,14 +8,14 @@ function Home() {
         <div className={styles.navbar}>
             
         </div>
-        <div className={styles.savishkarheading}>
+        <div className={styles.savishkarheading} data-aos="flip-right">
             <h2 className={styles.savishkarhead}>Savishkar</h2>
             <br />
             <h3 className={styles.savishkarcaption}>GEC Art And Literature Club</h3>        
         </div>
-        <section className={styles.abtsection}>
+        <div className={styles.abtsection}>
             <Info />
-        </section>
+        </div>
         <Artwork />
         </>
     )

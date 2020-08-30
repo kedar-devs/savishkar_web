@@ -183,7 +183,7 @@ class AddPoem extends Component {
   }
   render() {
     return (
-      <div className={styles.addpage}>
+      <div className={styles.addpage} data-aos="fade-down">
         <img src={logo} alt="savishkar logo" />
                <form  encType="multipart/form-data" action="http://localhost:3000/poem/add" method="post" className={styles.addform}>
                   <h2>Add a poem</h2>

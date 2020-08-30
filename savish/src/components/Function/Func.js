@@ -67,7 +67,7 @@ class Func extends Component {
     }
     form=()=>{
       return(
-        <form  encType="multipart/form-data" action="http://localhost:3000/user/addcontent/" onSubmit={this.onSubmit} method="post" className={styles.userinputform}>
+        <form  encType="multipart/form-data" data-aos="fade-down"data-aos-duration="2000" action="http://localhost:3000/user/addcontent/" onSubmit={this.onSubmit} method="post" className={styles.userinputform}>
             {/* <div  style={{color: 'white'}}>
             <input type = "radio"
                  name = "type"     
@@ -143,7 +143,7 @@ class Func extends Component {
     render() {
         if(!!localStorage.getItem('token')){
         return (
-            <div className={styles.functionpage}>
+            <div className={styles.functionpage} data-aos="fade-down">
               <div className={styles.functionpagediv}>
                   <h2>To add something of your own</h2>
                   <button onClick={() => this.setState({form: true}) }>click here</button> 

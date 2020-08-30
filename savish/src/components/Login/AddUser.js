@@ -70,7 +70,7 @@ export class AddUser extends Component {
   render() {
     return (
       <div className={styles.loginformpage}>
-      <form onSubmit={this.onSubmit} method="POST" className={styles.loginform}>
+      <form onSubmit={this.onSubmit} method="POST" className={styles.loginform} data-aos="fade-down">
            <fieldset>
                <img src={logo} alt="Savishkar logo" />
                <h1>Add User</h1>

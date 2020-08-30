@@ -48,7 +48,7 @@ class AddVideo extends Component {
   }
   render() {
     return (
-      <div className={styles.addpage}>
+      <div className={styles.addpage} data-aos="fade-down">
       <img src={logo} alt="savishkar logo" />
            <form  onSubmit={this.onSubmit} method="post" className={styles.addform}>
               <h2>Add a Video</h2>

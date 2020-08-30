@@ -38,7 +38,7 @@ class LoginAdmin extends Component {
     }
     render() {
         return (
-            <div className={styles.loginformpage}>
+            <div className={styles.loginformpage} data-aos="fade-down">
             <form onSubmit={this.onSubmit} method="POST" className={styles.loginform}>
                  <fieldset>
                      <img src={logo} alt="Savishkar logo" />

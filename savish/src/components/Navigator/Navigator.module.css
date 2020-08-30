@@ -140,7 +140,7 @@
         }
     }
     .moveright{
-        animation: moveinright 1s linear;
+        animation: moveinright 1s linear forwards;
     }
     @keyframes moveinright{
         from{
@@ -148,6 +148,7 @@
         }
         to{
             transform: translateX(300px);
+            display: none;
         }
     }
     .navlink{
