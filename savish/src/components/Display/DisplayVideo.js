@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import styles from './Display.module.css';
 import VideoCard from './VideoCard';
+import Loader from '../Loader/Loader';
 
 const Video = props => {
     return (
@@ -13,7 +14,8 @@ class DisplayStory extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            video: []
+            video: [],
+            loading:true
         }
         this.state.videolist = this.videolist()
 
@@ -22,7 +24,8 @@ class DisplayStory extends Component {
         axios.get('http://localhost:3000/video/')
             .then(response => {
                 this.setState({
-                    video: response.data
+                    video: response.data,
+                    loading:false
                 })
             })
             .catch(err => console.log(err))
@@ -35,9 +38,11 @@ class DisplayStory extends Component {
     render() {
         return (
             <div>
-                <div className={styles.video}>
+                {this.state.loading?(<Loader/>):(
+                   <div className={styles.video}>
                     {this.videolist()}
-                </div>
+                    </div> 
+                )}
             </div>
         )
     }
