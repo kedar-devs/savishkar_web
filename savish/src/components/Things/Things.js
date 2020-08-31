@@ -15,11 +15,10 @@ class Things extends Component {
   
   ]
     return (
-      
-      <div className={styles.container}>
+      <div className={styles.container} >
         <h2 className={styles.header}>Add Content</h2>
        {items.map((item,k) => (
-        <div key={k} className={styles.card}>
+        <div key={k} className={styles.card} data-aos="flip-up" data-aos-offset="0">
           <div className={styles.inner}>
           <img className={styles.image} src={item.image} alt='dghsfh'/>
           <span className={styles.title}>{item.name}</span>

@@ -8,7 +8,7 @@ export default function Display({posts}) {
         <div className={styles.top}>
             <div className={styles.container}>
                 {posts.map((post,k) => (
-                    <div key={k} className={styles.card}>
+                    <div key={k} className={styles.card} data-aos="fade-down" data-aos-offset="-100">
                     <img className={styles.image} src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="couldn't load"/>
                     <div className={styles.body}>
                         <div className={styles.title}>{post.poet||post.Author}</div>

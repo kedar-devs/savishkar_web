@@ -234,8 +234,8 @@ h3{
     background-image:linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,.5)),url("PIXNIO-291615-4377x3283.jpg") ;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
-    overflow-y: auto;
+    height: 100%;
+    overflow-x: hidden;
     /* min-height: 100vh; */
     -webkit-background-size: 100%;
     -moz-background-size: cover;
@@ -243,7 +243,7 @@ h3{
     width: auto;
     position:center;
      background-color: #464646; 
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-position: center center;     
     z-index:-10;
 }

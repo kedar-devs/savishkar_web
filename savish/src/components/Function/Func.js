@@ -67,7 +67,7 @@ class Func extends Component {
     }
     form=()=>{
       return(
-        <form  encType="multipart/form-data" action="http://localhost:3000/user/addcontent/" onSubmit={this.onSubmit} method="post" className={styles.userinputform}>
+        <form  encType="multipart/form-data" data-aos="fade-down"data-aos-duration="2000" action="http://localhost:3000/user/addcontent/" onSubmit={this.onSubmit} method="post" className={styles.userinputform}>
             {/* <div  style={{color: 'white'}}>
             <input type = "radio"
                  name = "type"     
@@ -101,25 +101,6 @@ class Func extends Component {
           <br />
           <p> You have selected {this.state.type}</p>
           </div> */}
-            {/* <label className={styles.container}>One
-              <input type="checkbox" checked="checked" />
-              <span className={styles.checkmark}></span>
-            </label>
-
-            <label className={styles.container}>Two
-              <input type="checkbox" />
-              <span className={styles.checkmark}></span>
-            </label>
-
-            <label className={styles.container}>Three
-              <input type="checkbox" />
-              <span className={styles.checkmark}></span>
-            </label>
-
-            <label className={styles.container}>Four
-              <input type="checkbox" />
-              <span className={styles.checkmark}></span>
-            </label> */}
         <div className={styles.group}>
           <input type="radio" name = "type"     
                  value = 'poem'
@@ -162,7 +143,7 @@ class Func extends Component {
     render() {
         if(!!localStorage.getItem('token')){
         return (
-            <div className={styles.functionpage}>
+            <div className={styles.functionpage} data-aos="fade-down">
               <div className={styles.functionpagediv}>
                   <h2>To add something of your own</h2>
                   <button onClick={() => this.setState({form: true}) }>click here</button> 
@@ -176,10 +157,11 @@ class Func extends Component {
         )
         }
         else{
-            this.props.history.push("loginuser")
+            const {history}=this.props
+            history.push("loginuser")
+            return (<div></div>)
         }
     }
 
 }
-
 export default Func

@@ -122,6 +122,7 @@ class AddPoem extends Component {
     this.onSubmit = this.onSubmit.bind(this)
     this.onChange = this.onChange.bind(this)
     this.changes = this.changes.bind(this)
+    this.warningref=React.createRef()
     this.state = {
       poet: '',
       content: null,
@@ -174,23 +175,25 @@ class AddPoem extends Component {
       .then(res => {
         this.props.history.push("things")
         console.log(res.data)
-      
       })
-      .catch(err => console.log('ERROR:' + err))
-    //window.location = '/addpoem'
+      .catch(err => {console.log('ERROR:' + err)
+      this.warningref.current.innerText="*Opps not you Sorry! its our fault!Please try again in a while*"
+    })
+    // window.location = '/addpoem'
   }
   render() {
     return (
-      <div className={styles.addpage}>
+      <div className={styles.addpage} data-aos="fade-down">
         <img src={logo} alt="savishkar logo" />
                <form  encType="multipart/form-data" action="http://localhost:3000/poem/add" method="post" className={styles.addform}>
                   <h2>Add a poem</h2>
-                  <input type="text" className=""  placeholder="Title" name="title" value={this.state.title} onChange={this.onChange} />
-                  <input type="text" className=""  placeholder="Poet" name="poet" value={this.state.poet} onChange={this.onChange} />
-                  <input type="text" className=""  placeholder="Please add the description" name="about" onChange={this.onChange} />
-                  {/* <input type="file" className=""  placeholder="Submit .txt or .docx file" name="content" onChange={this.changes} ref={ref=> this.fileInput = ref}/> */}
-                  <input type="file" class={styles.customfileinput} name="content" onChange={this.changes} ref={ref=> this.fileInput = ref}/>   
-                  <input type="date" id="inputAddress2" placeholder="Date" value={this.state.date} name="date" onChange={this.onChange} />
+                  <p ref={this.warningref} ></p>
+                  <input type="text"  placeholder="Title" name="title" value={this.state.title} onChange={this.onChange} required/>
+                  <input type="text"  placeholder="Poet" name="poet" value={this.state.poet} onChange={this.onChange} required/>
+                  <input type="text"  placeholder="Please add the description" name="about" onChange={this.onChange} required/>
+                  {/* <input type="file"  placeholder="Submit .txt or .docx file" name="content" onChange={this.changes} ref={ref=> this.fileInput = ref}/> */}
+                  <input type="file" className={styles.customfileinput} name="content" onChange={this.changes} ref={ref=> this.fileInput = ref} required/>   
+                  <input type="date" id="inputAddress2" placeholder="Date" value={this.state.date} name="date" onChange={this.onChange} required/>
                   <button type="submit">Submit</button>
                </form>            
       </div>

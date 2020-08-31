@@ -23,8 +23,5 @@ const Story= () =>{
     return(
         <Display posts={stories}/>
     )
-    
 }
-
 export default Story;
-

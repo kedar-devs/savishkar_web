@@ -30,6 +30,9 @@
     margin: 20px;
     color: #e3e3e3;
 }
+.addform input:focus{
+    border-bottom:1px solid rgba(255, 255, 255, .5);
+}
 .addform input::placeholder{
     color: rgba(255, 255, 255, .7);
 }

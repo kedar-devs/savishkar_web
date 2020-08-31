@@ -9,10 +9,10 @@ import classnames from 'classnames';
 function Footer() {
     return (
         <footer className={styles.footer}>
-        <div className={styles.companyname}>Savishkar</div>
-        <div className={styles.explore}>
-            <span>Explore</span>
-            <div className={styles.sitemap}>
+        <div className={styles.companyname} data-aos="fade-left" data-aos-offset="-200">Savishkar</div>
+        <div className={styles.explore} >
+            <span data-aos="fade-left" data-aos-offset="-200">Explore</span>
+            <div className={styles.sitemap} data-aos="fade-left" data-aos-offset="-200">
                 <div className={classnames(styles.left,styles.column)}>
                     <p>Home</p>
                     <p>About Us</p>
@@ -25,7 +25,7 @@ function Footer() {
                 </div>
             </div>
         </div>
-        <div className={styles.socialmedias}>
+        <div className={styles.socialmedias} data-aos="fade-left" data-aos-offset="-200">
             <img src={gmail} alt="gmail icon" />
             <img src={twitter} alt="twitter icon" />
             <img src={instagram} alt="instagram icon" />

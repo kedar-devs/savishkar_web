@@ -12,10 +12,11 @@ function Navigator() {
     closedbtn.style.display="block"
   }
   const responsiveNavbarClose=()=>{
-    resnavrref.addClasslist="moveright"
-    closedbtn.addClasslist="moveright"
-    resnavrref.style.display="none"
-    closedbtn.style.display="none"
+    resnavrref.classList.add("Navigator_moveright__1lI1W")
+    closedbtn.classList.add("Navigator_moveright__1lI1W")
+    // closedbtn.classList.add="moveright"
+    // resnavrref.style.display="none"
+    // closedbtn.style.display="none"
   }
     return (
         <div>
@@ -45,18 +46,20 @@ function Navigator() {
             </Navbar.Collapse>
           </Navbar> */}
            {/* className={styles.hamburgericon} */}
-        <header className={styles.navbar}>
-          <div className={styles.leftnav}>
-            <img src={logo} alt="savishlogo" title="Saviskar Logo" className={styles.logo}/>
-            </div>
-            <img src={closebtn} className={styles.closebtn} ref={e=>closedbtn=e} onClick={responsiveNavbarClose} alt="close btn"/>
-              <ul className={styles.navlinks}   ref={(e)=>{resnavrref=e}}>
-              <Link to="/" className={styles.link}><li className={styles.navlink}>Home</li></Link>
-                <Link to="/credits" className={styles.link}><li className={styles.navlink}>Credits</li></Link>
-                <li className={styles.navlink}>Sign In</li>
-                <li className={styles.navlink}>Log In</li>
-              </ul>
-              <img src={hamburgericon} alt="hamburger icon" className={styles.hamburgericon} onClick={responsiveNavbarOpen} />
+        <header className={styles.navbar} >
+            <div className={styles.leftnav} data-aos="fade-left" >
+              <img src={logo} alt="savishlogo" title="Saviskar Logo" className={styles.logo}/>
+              </div>
+              <img src={closebtn} className={styles.closebtn} ref={e=>closedbtn=e} onClick={responsiveNavbarClose} alt="close btn"/>
+                <ul className={styles.navlinks}   ref={(e)=>{resnavrref=e}} data-aos="fade-left" data-aos-delay="100"
+    data-aos-duration="3000"
+    data-aos-easing="ease-in-out">
+                <Link to="/" className={styles.link}><li className={styles.navlink}>Home</li></Link>
+                  <Link to="/credits" className={styles.link}><li className={styles.navlink}>Credits</li></Link>
+                  <li className={styles.navlink}>Sign In</li>
+                  <li className={styles.navlink}>Log In</li>
+                </ul>
+                <img src={hamburgericon} alt="hamburger icon" className={styles.hamburgericon} onClick={responsiveNavbarOpen} />
         </header>  
         </div>
     )
