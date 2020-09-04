@@ -49,7 +49,7 @@ class LoginUser extends Component {
                         <img src={logo} alt="Savishkar logo" />
                         <p ref={this.warningref} ></p>
                         <h1>Login</h1>
-                        <input type="email" className={styles.username} name="email" placeholder="Username" value={this.state.username} onChange={this.onChange} required />
+                        <input type="email" className={styles.username} name="email" placeholder="Email" value={this.state.username} onChange={this.onChange} required />
                         <small id="emailHelp" className={styles.emailhelp}>u'r secret is safe with us</small>
                         <input type="password" className={styles.password} name="password" placeholder="Password" value={this.state.password} onChange={this.onChange} required/>
                         <button type="submit" className={styles.loginbtn} onClick={this.onSubmit} >Submit</button>

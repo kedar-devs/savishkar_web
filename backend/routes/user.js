@@ -1,6 +1,8 @@
 const router=require('express').Router();
 let User=require('../models/user.model');
 const jwt=require('jsonwebtoken');
+const bcrypt=require('bcryptjs');
+const saltRound=8;
 let multer=require('multer'),
     uuidv4=require('uuidv4'),
     express=require('express');
@@ -43,17 +45,21 @@ router.route('/add').post((req,res)=>{
             const description=' '
             const type=' '
             const newUser=new User({firstname,lastname,email,password,content,title,description,type})
-
-            newUser.save((err,user)=>{
-                if(err){
-                    console.log(err)
-                }
-                else{
-                    let payload={subject:user.email}
-                 let token=jwt.sign(payload,process.env.SECRET_KEY)
-                 res.status(200).send({token})
-                }
-            }) 
+            bcrypt.hash(newUser.password,saltRound,(err,hash)=>{
+                if (err) throw err;
+                newUser.password=hash;
+                newUser.save((err,user)=>{
+                    if(err){
+                        console.log(err)
+                    }
+                    else{
+                        let payload={subject:user.email}
+                     let token=jwt.sign(payload,process.env.SECRET_KEY)
+                     res.status(200).send({token})
+                    }
+                }) 
+            })
+            
              
              /*.then(res=>{
                  console.log(res.email)
@@ -73,21 +79,27 @@ router.route('/add').post((req,res)=>{
 router.post('/login',(req,res)=>{
 
     User.findOne({email:req.body.email},(err,user)=>{
+         
         if(err){
             console.log(err)
         }
         else{
             if(!user){
                 res.status(401).send('invalid Email')
-            }else if(user.password!==req.body.password){
-                res.status(401).send('invalid Password')
-            }
-            else{
-                let payload={subject:user._id}
-                let token=jwt.sign(payload,process.env.SECRET_KEY)
-
-                res.status(200).send({user,token})
-                
+            }else{
+                bcrypt.compare(req.body.password,user.password).then(isMatch=>{
+                    if(isMatch){
+                            let payload={subject:user._id}
+                            let token=jwt.sign(payload,process.env.SECRET_KEY)
+            
+                            res.status(200).send({user,token})
+                        
+                        
+                    }
+                    else{
+                        res.status(401).send('invalid Password')
+                    }
+                })
             }
         }
     })
