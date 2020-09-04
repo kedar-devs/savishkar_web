@@ -35,6 +35,7 @@ class LoginUser extends Component {
             localStorage.setItem('token', res.data.token)
             localStorage.setItem('token2',res.data.user._id)
             this.props.history.push("function")
+            window.location.reload(true)
         })
         .catch(err=>{
             console.log(err)

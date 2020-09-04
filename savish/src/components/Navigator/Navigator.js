@@ -4,9 +4,26 @@ import styles from './Navigator.module.css';
 import logo from "../../photos/newlogo.jpeg"
 import hamburgericon from "../../icons/hamburgericon.svg"
 import closebtn from "../../icons/closebtn.svg"
+import axios from 'axios'
 function Navigator() {
+  const DeleteUser=()=>{
+    let id=localStorage.getItem('token2')
+    localStorage.clear()
+    axios.delete("http://localhost:3000/user/delete/"+id)
+    .then(res=>{
+      console.log("User deleted");
+      window.location.reload(true);
+    })
+    .catch(err=>console.log(err))
+  }
+  const RemoveToken=()=>{
+    console.log("in remove item")
+    localStorage.removeItem('token')
+    window.location.reload(true);
+  }
   let resnavrref=null
   let closedbtn=null
+  let Exist=false
   const responsiveNavbarOpen=()=>{
     resnavrref.style.display="flex"
     closedbtn.style.display="block"
@@ -18,6 +35,9 @@ function Navigator() {
     // resnavrref.style.display="none"
     // closedbtn.style.display="none"
   }
+    if(localStorage.getItem('token')){
+      Exist=true
+    }
     return (
         <div>
           {/* <Navbar collapseOnSelect expand="lg" className={styles.navbar} >
@@ -56,8 +76,16 @@ function Navigator() {
     data-aos-easing="ease-in-out">
                 <Link to="/" className={styles.link}><li className={styles.navlink}>Home</li></Link>
                   <Link to="/credits" className={styles.link}><li className={styles.navlink}>Credits</li></Link>
-                  <li className={styles.navlink}>Sign In</li>
-                  <li className={styles.navlink}>Log In</li>
+                  
+                  {Exist?
+                  <div>
+                  
+                  <button className={styles.navlink} style={{'background':'transparent'}} onClick={()=>DeleteUser()}>sign out</button>
+                  <button className={styles.navlink} style={{'background':'transparent'}} onClick={()=>RemoveToken()}>log out</button>
+                  </div>
+                  : <div><Link to="/signin" className={styles.link}><li className={styles.navlink}>Sign In</li></Link>
+                  <Link to="/loginuser" className={styles.link}><li className={styles.navlink}>Log In</li></Link></div>}
+                  
                 </ul>
                 <img src={hamburgericon} alt="hamburger icon" className={styles.hamburgericon} onClick={responsiveNavbarOpen} />
         </header>  

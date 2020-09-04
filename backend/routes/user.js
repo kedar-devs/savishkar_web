@@ -135,7 +135,7 @@ router.post('/deletecontent/:id',(req,res)=>{
     })
     .catch(err=>res.status(400).json('Error outside post:'+err))
 })
-//not finished yet
+
 router.post('/removecontent/:id',(req,res)=>{
     
     console.log(req.body)
@@ -156,6 +156,10 @@ router.post('/removecontent/:id',(req,res)=>{
     })
     .catch(err=>res.status(400).json('Error outside post:'+err))
 })
-
+router.delete('/delete/:id',(req,res)=>{
+    User.findByIdAndDelete(req.params.id)
+    .then(()=>res.status(200).json('Deleted successfully'))
+    .catch(err=>res.status(400).json('Error:'+err))
+})
 
 module.exports=router;
