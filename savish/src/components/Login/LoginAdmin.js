@@ -27,7 +27,7 @@ class LoginAdmin extends Component {
             username: this.state.username,
             password:this.state.password
         }
-        axios.post("http://localhost:3000/admin/login",admin)
+        axios.post("/admin/login",admin)
         .then(res => {
             localStorage.setItem("admin",res.data.token)
             this.props.history.push("things")

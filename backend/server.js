@@ -45,7 +45,9 @@ app.use('/paint',paintRouter)
 app.use('/story',storyRouter)
 app.use('/video',videoRouter)
 
-
+if(process.env.NODE_ENV === 'production'){
+    //set static folder
+}
 app.listen(port,()=>{
     console.log(`server established successfully: ${port}`)
     

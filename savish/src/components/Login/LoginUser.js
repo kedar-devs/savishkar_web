@@ -29,7 +29,7 @@ class LoginUser extends Component {
         console.log(user.email)
         console.log(user.password)
         console.log(history)
-        axios.post("http://localhost:3000/user/login",user)
+        axios.post("/user/login",user)
         .then(res=>{
             console.log(res.data.token)
             localStorage.setItem('token', res.data.token)

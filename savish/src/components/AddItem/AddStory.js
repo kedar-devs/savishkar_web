@@ -43,9 +43,10 @@ class AddStory extends Component {
       date: this.state.date
     }
     console.log(story)
-    axios.post('http://localhost:3000/story/add', story)
+    axios.post('/story/add', story)
       .then(res =>{ 
-        this.props.history.push("things")
+        const {history}=this.props
+        history.push("things")
         console.log(res.data)
 
       })
@@ -58,7 +59,7 @@ class AddStory extends Component {
     return (
     <div className={styles.addpage} data-aos="fade-down">
       <img src={logo} alt="savishkar logo" />
-           <form  encType="multipart/form-data" action="http://localhost:3000/story/add" method="post" className={styles.addform}>
+           <form  encType="multipart/form-data" action="/story/add" method="post" className={styles.addform}>
               <h2>Add a paint</h2>
               <p ref={this.warningref} ></p>
               <input type="text" name="title" id="title" placeholder="Title of the story" value={this.state.title} onChange={this.onChange}/>
@@ -81,7 +82,7 @@ export default AddStory
       //       <img src={pic} alt='sorry couldnt load' className="img-fluid" />
       //     </div>
       //     <div className="col-md-6 col-sm-6">
-      //       <form encType="multipart/form-data" action="http://localhost:3000/story/add" method="post">
+      //       <form encType="multipart/form-data" action="/story/add" method="post">
       //         <div className="form-row">
       //           <div className="form-group col-md-6">
       //             <label>Title</label>

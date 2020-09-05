@@ -19,7 +19,7 @@ class DisplayPaint extends Component {
   }
   async componentDidMount() {
     axios
-      .get("http://localhost:3000/paint/")
+      .get("/paint/")
       .then((response) => {
         this.setState({
           paint: response.data,

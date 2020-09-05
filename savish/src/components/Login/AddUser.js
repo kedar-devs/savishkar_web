@@ -45,7 +45,7 @@ export class AddUser extends Component {
       password: this.state.password
     }
     console.log(this.state.email)
-    axios.post("http://localhost:3000/user/add", user,{
+    axios.post("/user/add", user,{
       'content-type': 'x-www-form-urlencoded'
   })
       .then(res => {
