@@ -45,7 +45,13 @@ app.use('/paint',paintRouter)
 app.use('/story',storyRouter)
 app.use('/video',videoRouter)
 
-
+if(process.env.NODE_ENV === 'production'){
+    //set static folder
+    app.use(express.static("savish/build"))
+    app.get("*",(req,res)=>{
+        res.sendFile(path.resolve(__dirname,"../savish","build","index.html"))
+    })
+}
 app.listen(port,()=>{
     console.log(`server established successfully: ${port}`)
     

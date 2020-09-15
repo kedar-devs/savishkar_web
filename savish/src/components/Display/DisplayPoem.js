@@ -9,7 +9,7 @@ const Poem = () => {
   useEffect(() => {
     const getData = async () => {
       await axios
-        .get("http://localhost:3000/poem/")
+        .get("/poem/")
         .then((response) => {
           setPoems(response.data);
           setLoading(false);

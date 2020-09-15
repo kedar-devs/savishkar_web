@@ -16,14 +16,14 @@ const onAdd=(props)=>{
             about:props.user.discription,
             date: new Date()
           }
-        axios.post('http://localhost:3000/poem/adduser',poem)
+        axios.post('/poem/adduser',poem)
         .then(res=>{
             console.log(res.data)
             this.props.history.push("things")
           })
           .catch(err=>console.log(err))
           
-    axios.post('http://localhost:3000/user/deletecontent/'+props.user._id,props.user)
+    axios.post('/user/deletecontent/'+props.user._id,props.user)
     .then(res=>{console.log("done")
     this.props.history.push("things")
 })
@@ -39,14 +39,14 @@ const onAdd=(props)=>{
             date: new Date()
           }
         
-        axios.post('http://localhost:3000/story/adduser',story)
+        axios.post('/story/adduser',story)
         .then(res=>{
             console.log(res.data)
             this.props.history.push("things")
           })
           .catch(err=>console.log(err))
           
-        axios.post('http://localhost:3000/user/deletecontent/'+props.user._id,props.user)
+        axios.post('/user/deletecontent/'+props.user._id,props.user)
         .then(res=>{console.log("done")
     this.props.history.push("things")
 })
@@ -63,14 +63,14 @@ const onAdd=(props)=>{
             content: props.user.content,
             date:new Date()
         }
-        axios.post('http://localhost:3000/paint/adduser',paint)
+        axios.post('/paint/adduser',paint)
         .then(res=>{
             console.log(res.data)
             this.props.history.push("things")
           })
           .catch(err=>console.log(err))
           
-    axios.post('http://localhost:3000/user/deletecontent/'+props.user._id,props.user)
+    axios.post('/user/deletecontent/'+props.user._id,props.user)
     .then(res=>{console.log("done")
     this.props.history.push("things")
 })
@@ -86,14 +86,14 @@ const onAdd=(props)=>{
             about:props.user.discription,
             date: new Date()
         }
-        axios.post('http://localhost:3000/video/add',video)
+        axios.post('/video/add',video)
         .then(res=>{
             console.log(res.data)
             this.props.history.push("things")
           })
         .catch(err=>console.log(err))
           
-    axios.post('http://localhost:3000/user/deletecontent/'+props.user._id,props.user)
+    axios.post('/user/deletecontent/'+props.user._id,props.user)
     .then(res=>{console.log("done")
     this.props.history.push("things")
 })
@@ -102,7 +102,7 @@ const onAdd=(props)=>{
 }
 }
 const ondelete=(props)=>{
-    axios.post('http://localhost:3000/user/removecontent/'+props.user._id,props.user)
+    axios.post('/user/removecontent/'+props.user._id,props.user)
     .then(res=>{
         console.log(res.data)
         this.props.history.push("things")
@@ -188,7 +188,7 @@ class DisplayStory extends Component {
         
     }
     componentDidMount(){
-        axios.get('http://localhost:3000/user/')
+        axios.get('/user/')
         .then(response=>{
             console.log(response.data)
             this.setState({

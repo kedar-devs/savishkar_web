@@ -55,7 +55,7 @@
 //     console.log(this.state.content)
 //     //console.log(poem)
 //     //console.log(poem)
-//     axios.post('http://localhost:3000/poem/add',poem,{
+//     axios.post('/poem/add',poem,{
 //       headers:{
 //         'encType': 'multipart/form-data'
 //       }
@@ -76,7 +76,7 @@
 //             <img src={pic} alt='sorry couldnt load' className="img-fluid" />
 //           </div>
 //           <div className="col-md-6 col-sm-6">
-//             <form  encType="multipart/form-data" action="http://localhost:3000/poem/add" method="post">
+//             <form  encType="multipart/form-data" action="/poem/add" method="post">
 //               <div className="form-row">
 //                 <div className="form-group col-md-6">
 //                   <label>Title</label>
@@ -167,7 +167,7 @@ class AddPoem extends Component {
     console.log(this.state.content)
     //console.log(poem)
     //console.log(poem)
-    axios.post('http://localhost:3000/poem/add',poem,{
+    axios.post('/poem/add',poem,{
       headers:{
         'encType': 'multipart/form-data'
       }
@@ -185,7 +185,7 @@ class AddPoem extends Component {
     return (
       <div className={styles.addpage} data-aos="fade-down">
         <img src={logo} alt="savishkar logo" />
-               <form  encType="multipart/form-data" action="http://localhost:3000/poem/add" method="post" className={styles.addform}>
+               <form  encType="multipart/form-data" action="/poem/add" method="post" className={styles.addform}>
                   <h2>Add a poem</h2>
                   <p ref={this.warningref} ></p>
                   <input type="text"  placeholder="Title" name="title" value={this.state.title} onChange={this.onChange} required/>
@@ -208,7 +208,7 @@ export default AddPoem
       //       <img src={pic} alt='sorry couldnt load' className="img-fluid" />
       //     </div>
       //     <div className="col-md-6 col-sm-6">
-      //       <form  encType="multipart/form-data" action="http://localhost:3000/poem/add" method="post">
+      //       <form  encType="multipart/form-data" action="/poem/add" method="post">
       //         <div className="form-row">
       //           <div className="form-group col-md-6">
       //             <label>Title</label>

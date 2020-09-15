@@ -8,7 +8,7 @@ const Story= () =>{
     const [loading,setLoading] = useState(true)
     useEffect(() => {
         const getData = async () => {
-            await axios.get('http://localhost:3000/story/')
+            await axios.get('/story/')
              .then(response => {
                 setStories(response.data)
                 setLoading(false)

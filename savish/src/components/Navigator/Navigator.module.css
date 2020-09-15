@@ -96,6 +96,13 @@
     float: right;
     vertical-align: middle;
 }
+.linkbtn{
+    background: transparent;
+    color: aliceblue;
+    border: none;
+    font-size: 20px;
+    font-family: 'Poppins', serif;   
+}
 .closebtn{
     z-index: 200;
     position: absolute;
@@ -148,7 +155,7 @@
         }
         to{
             transform: translateX(300px);
-            display: none;
+            /* display: none; */
         }
     }
     .navlink{

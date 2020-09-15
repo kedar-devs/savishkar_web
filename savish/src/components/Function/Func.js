@@ -58,7 +58,7 @@ class Func extends Component {
     }
     console.log(user)
     var userid=localStorage.getItem('token2')
-    axios.post('http://localhost:3000/user/addcontent/'+userid, data)
+    axios.post('/user/addcontent/'+userid, data)
     .then(res=>{
       console.log(res.data)
       this.props.history.push("home")
@@ -67,7 +67,7 @@ class Func extends Component {
     }
     form=()=>{
       return(
-        <form  encType="multipart/form-data" data-aos="fade-down"data-aos-duration="2000" action="http://localhost:3000/user/addcontent/" onSubmit={this.onSubmit} method="post" className={styles.userinputform}>
+        <form  encType="multipart/form-data" data-aos="fade-down"data-aos-duration="5000" action="/user/addcontent/" onSubmit={this.onSubmit} method="post" className={styles.userinputform}>
             {/* <div  style={{color: 'white'}}>
             <input type = "radio"
                  name = "type"     

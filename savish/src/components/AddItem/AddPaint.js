@@ -36,7 +36,7 @@ class AddPaint extends Component {
       date:this.state.date
     }
     console.log(paint)
-    axios.post('http://localhost:3000/paint/add', paint)
+    axios.post('/paint/add', paint)
       .then(res =>{ 
         this.props.history.push("things")
         console.log(res.data)})
@@ -49,7 +49,7 @@ class AddPaint extends Component {
     return (
       <div className={styles.addpage} data-aos="fade-down">
         <img src={logo} alt="savishkar logo" />
-             <form  encType="multipart/form-data" action="http://localhost:3000/paint/add" method="post" className={styles.addform}>
+             <form  encType="multipart/form-data" action="/paint/add" method="post" className={styles.addform}>
                 <h2>Add a paint</h2>
                 <p ref={this.warningref} ></p>
                 <input type="text" id="title" placeholder="Title" name="title" value={this.state.title} onChange={this.onChange}/>
@@ -72,7 +72,7 @@ export default AddPaint
       //       <img src={pic} alt='sorry could not load' className="img-fluid" />
       //     </div>
       //     <div className="col-md-6 col-sm-6 cont-pos">
-      //       <form encType="multipart/form-data" action="http://localhost:3000/paint/add" method="post">
+      //       <form encType="multipart/form-data" action="/paint/add" method="post">
       //         <div className="form-row">
       //           <div className="form-group col-md-6">
       //             <label>Title</label>

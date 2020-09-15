@@ -36,7 +36,7 @@ class AddVideo extends Component {
       date:this.state.date
     }
     console.log(story)
-    axios.post('http://localhost:3000/video/add', story)
+    axios.post('/video/add', story)
       .then(res => {
         this.props.history.push("things")
         console.log(res.data)

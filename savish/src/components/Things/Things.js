@@ -6,8 +6,9 @@ import storybook from '../../icons/stroybook.svg';
 import poem from "../../icons/poem.svg";
 
 class Things extends Component {
-
+  
   render() {
+    if(localStorage.getItem("admin")){
     const items = [{name:'Poem',body:'',image:poem,link:'/addpoem'},
     {name:'Paint',body:'',image:'https://img.icons8.com/color/48/000000/drawing--v2.png',link:'/addpaint'},
     {name:'Video',body:'',image:'https://img.icons8.com/fluent/48/000000/video.png',link:'/addvideo'},
@@ -31,6 +32,13 @@ class Things extends Component {
       </div>
      
     )
+    }
+    else{
+      const {history}=this.props
+      history.push("admin")
+      return(<div></div>)
+      
+    }
   }
 }
 

@@ -21,7 +21,7 @@ class DisplayStory extends Component {
 
     }
     componentDidMount() {
-        axios.get('http://localhost:3000/video/')
+        axios.get('/video/')
             .then(response => {
                 this.setState({
                     video: response.data,

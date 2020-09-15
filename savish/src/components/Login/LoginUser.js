@@ -29,12 +29,13 @@ class LoginUser extends Component {
         console.log(user.email)
         console.log(user.password)
         console.log(history)
-        axios.post("http://localhost:3000/user/login",user)
+        axios.post("/user/login",user)
         .then(res=>{
             console.log(res.data.token)
             localStorage.setItem('token', res.data.token)
             localStorage.setItem('token2',res.data.user._id)
             this.props.history.push("function")
+            window.location.reload(true)
         })
         .catch(err=>{
             console.log(err)
@@ -49,7 +50,7 @@ class LoginUser extends Component {
                         <img src={logo} alt="Savishkar logo" />
                         <p ref={this.warningref} ></p>
                         <h1>Login</h1>
-                        <input type="email" className={styles.username} name="email" placeholder="Username" value={this.state.username} onChange={this.onChange} required />
+                        <input type="email" className={styles.username} name="email" placeholder="Email" value={this.state.username} onChange={this.onChange} required />
                         <small id="emailHelp" className={styles.emailhelp}>u'r secret is safe with us</small>
                         <input type="password" className={styles.password} name="password" placeholder="Password" value={this.state.password} onChange={this.onChange} required/>
                         <button type="submit" className={styles.loginbtn} onClick={this.onSubmit} >Submit</button>
